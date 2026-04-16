@@ -1,49 +1,50 @@
-import { IoMenu } from 'react-icons/io5';
-import Image from 'next/image';
+import { IoMenu } from "react-icons/io5";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <header className='relative w-full bg-card'>
-        <div className='flex justify-between max-w-5xl px-2 py-5 m-auto relative'>
-          <h2 className='text-primary font-bold text-2xl font-sans'>
+      <header className="bg-card relative w-full">
+        <div className="relative m-auto flex max-w-5xl justify-between px-2 py-5">
+          <h2 className="text-primary font-sans text-2xl font-bold">
             Mimos da Poli
           </h2>
           <nav>
             <button>
-              <IoMenu className='size-7' />
+              <IoMenu className="size-7" />
             </button>
           </nav>
         </div>
       </header>
-      <main className='w-full'>
-        <section className='relative mx-auto w-full overflow-y-hidden h-[calc(100vh-74px)] '>
+      <main className="w-full">
+        <section className="relative mx-auto h-[calc(100vh-74px)] w-full overflow-y-hidden">
           <Image
-            className='absolute -z-20 w-full object-cover right-0  min-h-dvh '
-            src={'/backgroundImage.svg'}
+            className="absolute right-0 -z-20 min-h-dvh w-full object-cover"
+            src={"/backgroundImage.svg"}
             width={1500}
             height={1500}
-            alt='background'
+            alt="background"
+            loading="eager"
           />
-          <div className='absolute w-full min-h-full bg-foreground/60 -z-10' />
-          <article className='flex flex-col justify-center gap-20 px-2 max-w-5xl mx-auto w-full min-h-full'>
-            <div className='flex flex-col gap-5'>
-              <span className='text-background font-mono uppercase text-xs md:text-base'>
+          <div className="bg-foreground/60 absolute -z-10 min-h-full w-full" />
+          <article className="mx-auto flex min-h-full w-full max-w-5xl flex-col items-center justify-center gap-32 px-2">
+            <div className="flex flex-col gap-5">
+              <span className="text-background font-mono text-xs uppercase md:text-base">
                 O Atelier Digital
               </span>
-              <h1 className='text-background max-w-sm md:text-5xl lg:text-7xl sm:max-w-lg  font-extrabold text-4xl'>
+              <h1 className="text-background font-notoSerif max-w-sm text-6xl font-bold sm:max-w-xl sm:text-6xl lg:text-8xl">
                 A Curadoria de beleza que você merece
               </h1>
-              <p className='text-background max-w-md min-[450px]:max-w-2xl sm:text-xl'>
+              <p className="text-background w-3/4 max-w-md font-light min-[450px]:max-w-2xl sm:text-xl">
                 Descubra uma seleção exclusiva das melhores marcas de perfumaria
                 e semijoias, escolhidas a dedo para realçar sua essência.
               </p>
             </div>
-            <div className='flex flex-wrap gap-3'>
-              <button className='bg-primary text-background uppercase rounded-md py-2 px-9 shadow-md cursor-pointer'>
+            <div className="flex flex-wrap justify-center gap-4 sm:justify-evenly">
+              <button className="bg-primary hover:bg-primary/85 text-background cursor-pointer rounded-md px-14 py-4 uppercase shadow-md transition-all duration-300 hover:shadow-2xl">
                 Explorar coleções
               </button>
-              <button className='bg-card/30 border uppercase text-background rounded-md py-2 px-5 shadow-md cursor-pointer'>
+              <button className="bg-card/20 hover:bg-card/30 text-background cursor-pointer rounded-md border px-10 py-4 uppercase shadow-md transition-all duration-300 hover:shadow-2xl">
                 Fala com Consultoria
               </button>
             </div>
