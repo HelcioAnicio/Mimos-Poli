@@ -1,6 +1,7 @@
 import { IoMenu } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -41,13 +42,9 @@ export default function Home() {
                 e semijoias, escolhidas a dedo para realçar sua essência.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <button className="bg-primary text-background cursor-pointer rounded-md px-14 py-4 uppercase shadow-md transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-105">
-                Explorar coleções
-              </button>
-              <button className="bg-card/20 hover:bg-card/30 text-background cursor-pointer rounded-md border px-10 py-4 uppercase shadow-md transition-all duration-300 hover:shadow-2xl">
-                Fala com Consultoria
-              </button>
+            <div className="flex w-fit flex-wrap justify-center gap-4">
+              <Button>Explorar Coleções</Button>
+              <Button variant="secondary">Fala com a Consultoria</Button>
             </div>
           </article>
         </section>
@@ -70,83 +67,42 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-1 grid-rows-1 gap-10 py-20 sm:grid-cols-2 sm:grid-rows-2">
-              <div className="group bg-primary relative flex aspect-square w-full items-end overflow-hidden rounded-md">
-                <Image
-                  src={"/1.svg"}
-                  alt={"logo do patrocinador"}
-                  width={500}
-                  height={500}
-                  className="absolute top-0 h-full w-full rounded-md object-cover group-hover:scale-105"
-                />
-                <div className="bg-foreground/40 absolute z-10 aspect-square w-full" />
-                <div className="relative z-20 flex flex-col gap-5 px-10 pb-16">
-                  <h3 className="text-background font-notoSerif text-4xl">
-                    Natura
-                  </h3>
-                  <p></p>
-                  <button className="bg-primary text-background cursor-pointer rounded-md px-14 py-4 uppercase shadow-md transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-105">
-                    Explorar
-                  </button>
-                </div>
-              </div>
-              <div className="bg-primary relative flex aspect-square w-full items-end overflow-hidden rounded-md">
-                <Image
-                  src={"/1.svg"}
-                  alt={"logo do patrocinador"}
-                  width={500}
-                  height={500}
-                  className="absolute top-0 h-full w-full rounded-md object-cover transition-all duration-500 group-hover:scale-105"
-                />
-                <div className="bg-foreground/40 group absolute z-10 aspect-square w-full" />
-                <div className="relative z-20 flex flex-col gap-5 px-10 pb-16">
-                  <h3 className="text-background font-notoSerif text-4xl">
-                    Natura
-                  </h3>
-                  <p></p>
-                  <button className="bg-primary text-background cursor-pointer rounded-md px-14 py-4 uppercase shadow-md transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-105">
-                    Explorar
-                  </button>
-                </div>
-              </div>
-              <div className="bg-primary relative flex aspect-square w-full items-end overflow-hidden rounded-md">
-                <Image
-                  src={"/1.svg"}
-                  alt={"logo do patrocinador"}
-                  width={500}
-                  height={500}
-                  className="absolute top-0 h-full w-full rounded-md object-cover group-hover:scale-105"
-                />
-                <div className="bg-foreground/40 group absolute z-10 aspect-square w-full" />
-                <div className="relative z-20 flex flex-col gap-5 px-10 pb-16">
-                  <h3 className="text-background font-notoSerif text-4xl">
-                    Natura
-                  </h3>
-                  <p></p>
-                  <button className="bg-primary text-background cursor-pointer rounded-md px-14 py-4 uppercase shadow-md transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-105">
-                    Explorar
-                  </button>
-                </div>
-              </div>
-              <div className="bg-primary relative flex aspect-square w-full items-end overflow-hidden rounded-md">
-                <Image
-                  src={"/1.svg"}
-                  alt={"logo do patrocinador"}
-                  width={500}
-                  height={500}
-                  className="absolute top-0 h-full w-full rounded-md object-cover group-hover:scale-105"
-                />
-                <div className="bg-foreground/40 absolute z-10 aspect-square w-full" />
-                <div className="relative z-20 flex flex-col gap-5 px-10 pb-16">
-                  <h3 className="text-background font-notoSerif text-4xl">
-                    Natura
-                  </h3>
-                  <p></p>
-                  <button className="bg-primary text-background cursor-pointer rounded-md px-14 py-4 uppercase shadow-md transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-105">
-                    Explorar
-                  </button>
-                </div>
-              </div>
+            <div className="grid auto-rows-[400px] grid-cols-1 gap-8 md:grid-cols-12">
+              {[
+                { name: "Natura", src: "/1.svg" },
+                { name: "Eudora", src: "/1.svg" },
+                { name: "O Boticário", src: "/1.svg" },
+                { name: "Rommanel", src: "/1.svg" },
+              ].map((brand, index) => {
+                // Lógica para definir o tamanho de cada card
+                // Natura (0) e Rommanel (3) = Largos
+                // Eudora (1) e Boticário (2) = Estreitos
+                const isLarge = index === 0 || index === 3;
+                const gridClasses = isLarge ? "md:col-span-7" : "md:col-span-5";
+
+                return (
+                  <div
+                    key={index}
+                    className={`group relative flex w-full overflow-hidden rounded-xl ${gridClasses}`}
+                  >
+                    <Image
+                      src={brand.src}
+                      alt={`logo do ${brand.name}`}
+                      fill
+                      className="absolute inset-0 z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+
+                    <div className="absolute inset-0 z-20 bg-linear-to-t from-black/80 to-transparent" />
+
+                    <div className="relative z-30 flex h-full flex-col justify-end gap-3 px-10 pb-5">
+                      <h3 className="text-background font-notoSerif text-4xl">
+                        {brand.name}
+                      </h3>
+                      <Button>Explorar</Button>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </article>
         </section>
