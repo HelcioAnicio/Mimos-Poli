@@ -2,6 +2,7 @@ import { IoMenu } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
             loading="eager"
           />
           <div className="bg-foreground/60 absolute -z-10 min-h-full w-full" />
-          <article className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-2 px-5 min-[430px]:gap-16 sm:gap-20">
+          <article className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-2 px-5 min-[430px]:gap-16 sm:gap-20 lg:px-2 xl:px-0">
             <div className="flex flex-col gap-5">
               <span className="text-background font-mono text-xs uppercase md:text-base">
                 O Atelier Digital
@@ -49,8 +50,8 @@ export default function Home() {
           </article>
         </section>
         <section>
-          <article className="px-5 py-20">
-            <div className="flex flex-col gap-10">
+          <article className="mx-auto w-full max-w-5xl px-5 py-20 lg:px-2 xl:px-0">
+            <div className="flex flex-col gap-4 pb-20 md:pb-32">
               <h2 className="font-notoSerif w-full max-w-40 text-5xl min-[430px]:max-w-96 min-[500px]:max-w-none">
                 Nossas marcas parceiras
               </h2>
@@ -74,9 +75,6 @@ export default function Home() {
                 { name: "O Boticário", src: "/1.svg" },
                 { name: "Rommanel", src: "/1.svg" },
               ].map((brand, index) => {
-                // Lógica para definir o tamanho de cada card
-                // Natura (0) e Rommanel (3) = Largos
-                // Eudora (1) e Boticário (2) = Estreitos
                 const isLarge = index === 0 || index === 3;
                 const gridClasses = isLarge ? "md:col-span-7" : "md:col-span-5";
 
@@ -103,6 +101,28 @@ export default function Home() {
                   </div>
                 );
               })}
+            </div>
+          </article>
+        </section>
+        <section>
+          <article className="mx-auto w-full max-w-5xl px-4 py-10 md:py-20 lg:px-2 xl:px-0">
+            <div className="flex flex-wrap items-end justify-between gap-5">
+              <div className="flex flex-col gap-5">
+                <span className="text-secondary text-xs font-light uppercase">
+                  Destaques
+                </span>
+                <h2 className="font-notoSerif w-full text-5xl min-[430px]:max-w-96 min-[500px]:max-w-none">
+                  Novidades e Tendências
+                </h2>
+              </div>
+              <div className="flex gap-7">
+                <button className="bg-muted border-foreground/30 rounded-full border p-4">
+                  <FaArrowLeft />
+                </button>
+                <button className="bg-muted border-foreground/30 rounded-full border p-4">
+                  <FaArrowRight />
+                </button>
+              </div>
             </div>
           </article>
         </section>
