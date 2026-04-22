@@ -105,7 +105,7 @@ export default function Home() {
           </article>
         </section>
         <section>
-          <article className="mx-auto w-full max-w-5xl px-4 py-10 md:py-20 lg:px-2 xl:px-0">
+          <article className="mx-auto overflow-x-hidden w-full max-w-5xl flex flex-col gap-20 px-4 py-10 md:py-20 lg:px-2 xl:px-0">
             <div className="flex flex-wrap items-end justify-between gap-5">
               <div className="flex flex-col gap-5">
                 <span className="text-secondary text-xs font-light uppercase">
@@ -123,6 +123,36 @@ export default function Home() {
                   <FaArrowRight />
                 </button>
               </div>
+            </div>
+            <div className='flex whitespace-nowrap animate-scroll-custom space-x-10 ml-10'>
+              {[
+                {title:"Coleção lavanda real", description: "Perfumes", img:"/1.svg",},
+                {title:"Coleção profissional", description: "Perfumes", img:"/1.svg",},
+                {title:"Coleção linha gold", description: "Perfumes", img:"/1.svg",},
+              ].map((trend, index)=>(
+              <div key={index}>
+                <figure>
+                  <Image width={500} height={500} className='h-110 object-cover w-80 rounded-md' src={trend.img} alt='Imagem de lançamento' />
+                <figcaption className='text-xl font-notoSerif'>{trend.title}</figcaption>
+                <p className='text-sm uppercase  text-card'>{trend.description}</p>
+                </figure>
+                
+              </div>
+              ))}
+              {[
+                {title:"Coleção lavanda real", description: "Perfumes", img:"/1.svg",},
+                {title:"Coleção profissional", description: "Perfumes", img:"/1.svg",},
+                {title:"Coleção linha gold", description: "Perfumes", img:"/1.svg",},
+              ].map((trend, index)=>(
+              <div key={index}>
+                <figure>
+                  <Image width={500} height={500} className='h-110 object-cover w-80 rounded-md' src={trend.img} alt='Imagem de lançamento' />
+                <figcaption className='text-xl font-notoSerif'>{trend.title}</figcaption>
+                <p className='text-sm uppercase  text-card'>{trend.description}</p>
+                </figure>
+                
+              </div>
+              ))}
             </div>
           </article>
         </section>

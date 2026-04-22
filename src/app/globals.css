@@ -4,6 +4,30 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@layer utilities {
+  /* Definição da animação */
+  @keyframes scrollInfinite {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Classe utilitária personalizada */
+  .animate-scroll-custom {
+    display: flex;
+    width: max-content; /* Garante que o container tenha a largura dos itens */
+    animation: scrollInfinite 20s linear infinite;
+  }
+
+  /* Opcional: Pausar no hover */
+  .pause-hover:hover {
+    animation-play-state: paused;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
