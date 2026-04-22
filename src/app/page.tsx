@@ -5,6 +5,38 @@ import { Button } from "@/components/ui/button";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 export default function Home() {
+  const trends = [
+    {
+      title: "Coleção lavanda real",
+      description: "Perfumes",
+      img: "/1.svg",
+    },
+    {
+      title: "Coleção lavanda real",
+      description: "Perfumes",
+      img: "/1.svg",
+    },
+    {
+      title: "Coleção lavanda real",
+      description: "Perfumes",
+      img: "/1.svg",
+    },
+    {
+      title: "Coleção lavanda real",
+      description: "Perfumes",
+      img: "/1.svg",
+    },
+    {
+      title: "Coleção lavanda real",
+      description: "Perfumes",
+      img: "/1.svg",
+    },
+    {
+      title: "Coleção lavanda real",
+      description: "Perfumes",
+      img: "/1.svg",
+    },
+  ];
   return (
     <>
       <header className="bg-card relative w-full">
@@ -104,8 +136,8 @@ export default function Home() {
             </div>
           </article>
         </section>
-        <section>
-          <article className="mx-auto overflow-x-hidden w-full max-w-5xl flex flex-col gap-20 px-4 py-10 md:py-20 lg:px-2 xl:px-0">
+        <section className="bg-muted">
+          <article className="mx-auto flex w-full max-w-5xl flex-col gap-20 overflow-x-hidden px-4 py-10 md:py-20 lg:px-2 xl:px-0">
             <div className="flex flex-wrap items-end justify-between gap-5">
               <div className="flex flex-col gap-5">
                 <span className="text-secondary text-xs font-light uppercase">
@@ -124,36 +156,69 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className='flex whitespace-nowrap animate-scroll-custom space-x-10 ml-10'>
-              {[
-                {title:"Coleção lavanda real", description: "Perfumes", img:"/1.svg",},
-                {title:"Coleção profissional", description: "Perfumes", img:"/1.svg",},
-                {title:"Coleção linha gold", description: "Perfumes", img:"/1.svg",},
-              ].map((trend, index)=>(
-              <div key={index}>
-                <figure>
-                  <Image width={500} height={500} className='h-110 object-cover w-80 rounded-md' src={trend.img} alt='Imagem de lançamento' />
-                <figcaption className='text-xl font-notoSerif'>{trend.title}</figcaption>
-                <p className='text-sm uppercase  text-card'>{trend.description}</p>
-                </figure>
-                
-              </div>
+            <div className="animate-scroll-custom pause-hover flex w-max gap-20 pl-20 whitespace-nowrap">
+              {trends.map((trend, index) => (
+                <div key={index}>
+                  <figure className="max-w-xs md:max-w-md">
+                    <Image
+                      width={500}
+                      height={500}
+                      className="h-115 rounded-md object-cover"
+                      src={trend.img}
+                      alt="Imagem de lançamento"
+                    />
+                    <figcaption className="font-notoSerif text-xl">
+                      {trend.title} {index}
+                    </figcaption>
+                    <p className="text-card text-sm uppercase">
+                      {trend.description}
+                    </p>
+                  </figure>
+                </div>
               ))}
-              {[
-                {title:"Coleção lavanda real", description: "Perfumes", img:"/1.svg",},
-                {title:"Coleção profissional", description: "Perfumes", img:"/1.svg",},
-                {title:"Coleção linha gold", description: "Perfumes", img:"/1.svg",},
-              ].map((trend, index)=>(
-              <div key={index}>
-                <figure>
-                  <Image width={500} height={500} className='h-110 object-cover w-80 rounded-md' src={trend.img} alt='Imagem de lançamento' />
-                <figcaption className='text-xl font-notoSerif'>{trend.title}</figcaption>
-                <p className='text-sm uppercase  text-card'>{trend.description}</p>
-                </figure>
-                
-              </div>
+              {trends.map((trend, index) => (
+                <div key={index}>
+                  <figure className="max-w-xs md:max-w-md">
+                    <Image
+                      width={500}
+                      height={500}
+                      className="h-115 rounded-md object-cover"
+                      src={trend.img}
+                      alt="Imagem de lançamento"
+                    />
+                    <figcaption className="font-notoSerif text-xl">
+                      {trend.title} {index}
+                    </figcaption>
+                    <p className="text-card text-sm uppercase">
+                      {trend.description}
+                    </p>
+                  </figure>
+                </div>
               ))}
             </div>
+          </article>
+        </section>
+        <section>
+          <article>
+            <div>
+              <h2></h2>
+              <p></p>
+            </div>
+            <ul>
+              {[].map((product, index) => (
+                <li key={index}>
+                  <span></span>
+                  <h3></h3>
+                  <p></p>
+                  <Link
+                    href={"https://google.com"}
+                    className="uppercase underline underline-offset-2"
+                  >
+                    Ver Revista
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </article>
         </section>
       </main>

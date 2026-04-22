@@ -18,8 +18,7 @@
   /* Classe utilitária personalizada */
   .animate-scroll-custom {
     display: flex;
-    width: max-content; /* Garante que o container tenha a largura dos itens */
-    animation: scrollInfinite 20s linear infinite;
+    animation: scrollInfinite 25s linear infinite;
   }
 
   /* Opcional: Pausar no hover */
