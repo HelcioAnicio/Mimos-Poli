@@ -39,38 +39,52 @@ export default function Home() {
     },
   ];
 
+  const logos = [
+    { img: "/tupperware.png" },
+    { img: "/eudora.png" },
+    { img: "/boticário.png" },
+    { img: "/jequiti.png" },
+    { img: "/natura.png" },
+  ];
+
   const companies = [
-    {title: "Revista empresa",
-    description: "coleção",
-    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
-    link: 'https://google.com'
+    {
+      title: "Revista empresa",
+      description: "coleção",
+      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      link: "https://google.com",
     },
-    {title: "Revista empresa",
-    description: "coleção",
-    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
-    link: 'https://google.com'
+    {
+      title: "Revista empresa",
+      description: "coleção",
+      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      link: "https://google.com",
     },
-    {title: "Revista empresa",
-    description: "coleção",
-    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
-    link: 'https://google.com'
+    {
+      title: "Revista empresa",
+      description: "coleção",
+      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      link: "https://google.com",
     },
-    {title: "Revista empresa",
-    description: "coleção",
-    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
-    link: 'https://google.com'
+    {
+      title: "Revista empresa",
+      description: "coleção",
+      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      link: "https://google.com",
     },
-    {title: "Revista empresa",
-    description: "coleção",
-    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
-    link: 'https://google.com'
+    {
+      title: "Revista empresa",
+      description: "coleção",
+      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      link: "https://google.com",
     },
-    {title: "Revista empresa",
-    description: "coleção",
-    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
-    link: 'https://google.com'
+    {
+      title: "Revista empresa",
+      description: "coleção",
+      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      link: "https://google.com",
     },
-  ]
+  ];
   return (
     <>
       <header className="bg-card relative w-full">
@@ -233,28 +247,101 @@ export default function Home() {
           </article>
         </section>
         <section>
-          <article className='flex w-full max-w-5xl mx-auto flex-col gap-10 py-20 px-2 min-[400px]:px-4 lg:px-2 xl:px-0'>
-            <div className='text-center mx-auto max-w-sm md:max-w-lg space-y-3'>
-              <h2 className='font-notoSerif font-medium text-3xl min-[420px]:text-4xl '>Catálogos Digitais</h2>
-              <p className='text-secondary-foreground/60 text-sm'>Folheie as últimas edições e escolha seus mimos. Descubra as últimas tendências diretamente do seu dispositivo.</p>
+          <article className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-2 py-20 min-[400px]:px-4 lg:px-2 xl:px-0">
+            <div className="mx-auto max-w-sm space-y-3 text-center md:max-w-lg">
+              <h2 className="font-notoSerif text-3xl font-medium min-[420px]:text-4xl">
+                Catálogos Digitais
+              </h2>
+              <p className="text-secondary-foreground/60 text-sm">
+                Folheie as últimas edições e escolha seus mimos. Descubra as
+                últimas tendências diretamente do seu dispositivo.
+              </p>
             </div>
-            <ul className='grid grid-cols-2 gap-10 mx-auto sm:grid-cols-3 sm:gap-16 lg:gap-x-24 lg:grid-cols-4'>
+            <ul className="mx-auto grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-16 lg:grid-cols-4 lg:gap-x-24">
               {companies.map((company, index) => (
-                <li key={index} className='flex flex-col items-center gap-3 text-center'>
-                  <span className='rounded-full bg-card/40 hover:bg-primary transition-all duration-300 hover:text-background text-card-foreground p-5'>{company.icon}</span>
+                <li
+                  key={index}
+                  className="flex flex-col items-center gap-3 text-center"
+                >
+                  <span className="bg-card/40 hover:bg-primary hover:text-background text-card-foreground rounded-full p-5 transition-all duration-300">
+                    {company.icon}
+                  </span>
                   <div>
-                    <h3 className='font-notoSerif font-medium'>{company.title}</h3>
-                    <p className='text-card-foreground/50'>{company.description}</p>
+                    <h3 className="font-notoSerif font-medium">
+                      {company.title}
+                    </h3>
+                    <p className="text-card-foreground/50">
+                      {company.description}
+                    </p>
                   </div>
                   <Link
                     href={company.link}
-                    className="uppercase underline underline-offset-4 text-secondary decoration-secondary/30 hover:decoration-primary duration-300 transition-all text-light text-xs"
+                    className="text-secondary decoration-secondary/30 hover:decoration-primary text-light text-xs uppercase underline underline-offset-4 transition-all duration-300"
                   >
                     Ver Revista
                   </Link>
                 </li>
               ))}
             </ul>
+          </article>
+        </section>
+        <section>
+          <article className="flex w-full max-w-5xl flex-wrap gap-10 px-2 min-[400px]:px-4 lg:px-2 xl:px-0">
+            <Image
+              src={"/1.svg"}
+              alt={"Imagem da Poliana"}
+              height={500}
+              width={500}
+              className="w-full rounded-md object-cover lg:w-1/2 lg:max-w-sm"
+            />
+            <div className="max-w-xl space-y-10 py-10 lg:w-1/2">
+              <span className="text-secondary text-sm font-light">
+                A Essência pro trás do atêlier
+              </span>
+              <h2 className="font-notoSerif mb-20 text-4xl font-medium sm:text-6xl">
+                Poliana Autran
+              </h2>
+              <p className="text-secondary-foreground/40 sm:text-lg">
+                Com mais de uma década de experiência no mercado de beleza,
+                fundei a Mimos da Poli não apenas como uma loja, mas como um
+                refúgio de curadoria pessoal.
+              </p>
+              <p className="text-secondary-foreground/40 text-sm font-light sm:text-base">
+                Minha missão é elevar o seu cotidiano através de fragrâncias,
+                texturas e brilhos que ressoam com sua personalidade única. Cada
+                item é selecionado com o olhar atento de quem entende que a
+                beleza é um ato de carinho consigo mesma.
+              </p>
+              <Link href={""}>
+                <Button>Nossa história</Button>
+              </Link>
+            </div>
+          </article>
+        </section>
+        <section>
+          <article className="overflow-x-hidden">
+            <div className="animate-scroll-custom pause-hover flex w-max gap-20 pl-20 whitespace-nowrap">
+              {logos.map((logo, index) => (
+                <Image
+                  width={500}
+                  height={500}
+                  className="w-40 object-contain"
+                  src={logo.img}
+                  alt="Imagem de lançamento"
+                  key={index}
+                />
+              ))}
+              {logos.map((logo, index) => (
+                <Image
+                  width={500}
+                  height={500}
+                  className="w-40 object-contain"
+                  src={logo.img}
+                  alt="Imagem de lançamento"
+                  key={index}
+                />
+              ))}
+            </div>
           </article>
         </section>
       </main>
