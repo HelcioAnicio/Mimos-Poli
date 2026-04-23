@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { MdMenuBook } from "react-icons/md";
 
 export default function Home() {
   const trends = [
@@ -37,6 +38,39 @@ export default function Home() {
       img: "/1.svg",
     },
   ];
+
+  const companies = [
+    {title: "Revista empresa",
+    description: "coleção",
+    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
+    link: 'https://google.com'
+    },
+    {title: "Revista empresa",
+    description: "coleção",
+    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
+    link: 'https://google.com'
+    },
+    {title: "Revista empresa",
+    description: "coleção",
+    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
+    link: 'https://google.com'
+    },
+    {title: "Revista empresa",
+    description: "coleção",
+    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
+    link: 'https://google.com'
+    },
+    {title: "Revista empresa",
+    description: "coleção",
+    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
+    link: 'https://google.com'
+    },
+    {title: "Revista empresa",
+    description: "coleção",
+    icon: <MdMenuBook className='text-xl md:text-2xl'/>,
+    link: 'https://google.com'
+    },
+  ]
   return (
     <>
       <header className="bg-card relative w-full">
@@ -199,20 +233,22 @@ export default function Home() {
           </article>
         </section>
         <section>
-          <article>
-            <div>
-              <h2></h2>
-              <p></p>
+          <article className='flex w-full max-w-5xl mx-auto flex-col gap-10 py-20 px-2 min-[400px]:px-4 lg:px-2 xl:px-0'>
+            <div className='text-center mx-auto max-w-sm md:max-w-lg space-y-3'>
+              <h2 className='font-notoSerif font-medium text-3xl min-[420px]:text-4xl '>Catálogos Digitais</h2>
+              <p className='text-secondary-foreground/60 text-sm'>Folheie as últimas edições e escolha seus mimos. Descubra as últimas tendências diretamente do seu dispositivo.</p>
             </div>
-            <ul>
-              {[].map((product, index) => (
-                <li key={index}>
-                  <span></span>
-                  <h3></h3>
-                  <p></p>
+            <ul className='grid grid-cols-2 gap-10 mx-auto sm:grid-cols-3 sm:gap-16 lg:gap-x-24 lg:grid-cols-4'>
+              {companies.map((company, index) => (
+                <li key={index} className='flex flex-col items-center gap-3 text-center'>
+                  <span className='rounded-full bg-card/40 hover:bg-primary transition-all duration-300 hover:text-background text-card-foreground p-5'>{company.icon}</span>
+                  <div>
+                    <h3 className='font-notoSerif font-medium'>{company.title}</h3>
+                    <p className='text-card-foreground/50'>{company.description}</p>
+                  </div>
                   <Link
-                    href={"https://google.com"}
-                    className="uppercase underline underline-offset-2"
+                    href={company.link}
+                    className="uppercase underline underline-offset-4 text-secondary decoration-secondary/30 hover:decoration-primary duration-300 transition-all text-light text-xs"
                   >
                     Ver Revista
                   </Link>
