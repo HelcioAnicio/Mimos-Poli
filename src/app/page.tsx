@@ -345,6 +345,64 @@ export default function Home() {
           </article>
         </section>
       </main>
+      <footer>
+        <div className="w-full max-w-5xl px-2 py-20 min-[410px]:px-4 md:gap-10 lg:px-2 xl:px-0">
+          <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-10">
+            <li className="space-y-5">
+              <h3 className="text-2xl font-medium">Mimos da Poli</h3>
+              <p className="text-secondary-foreground/50 text-sm font-light">
+                Elegância editorial em cada detalhe. Seu destino para beleza de
+                luxo e semijoias exclusivas.
+              </p>
+            </li>
+            <li className="space-y-5">
+              <p className="text-secondary text-sm font-medium uppercase">
+                Atelier
+              </p>
+              <Link
+                className="text-secondary-foreground/50 hover:text-secondary hover:decoration-secondary block text-sm font-light hover:underline hover:underline-offset-2"
+                href={"https://google.com"}
+              >
+                Política de Privacidade
+              </Link>
+              <Link
+                className="text-secondary-foreground/50 hover:text-secondary hover:decoration-secondary block text-sm font-light hover:underline hover:underline-offset-2"
+                href={"https://google.com"}
+              >
+                Termos de Uso
+              </Link>
+            </li>
+            <li className="space-y-5">
+              <p className="text-secondary text-sm font-medium uppercase">
+                Suporte
+              </p>
+              <Link
+                className="text-secondary-foreground/50 hover:text-secondary hover:decoration-secondary block text-sm font-light hover:underline hover:underline-offset-2"
+                href={"https://google.com"}
+              >
+                Envios e Devoluções
+              </Link>
+              <Link
+                className="text-secondary-foreground/50 hover:text-secondary hover:decoration-secondary block text-sm font-light hover:underline hover:underline-offset-2"
+                href={"https://google.com"}
+              >
+                Fale Conosco
+              </Link>
+            </li>
+            <li className="space-y-5">
+              <p className="text-secondary text-sm font-medium uppercase">
+                Descobrir
+              </p>
+              <Link
+                className="text-secondary-foreground/50 hover:text-secondary hover:decoration-secondary block text-sm font-light hover:underline hover:underline-offset-2"
+                href={"https://google.com"}
+              >
+                Nossas Marcas
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </>
   );
 }
