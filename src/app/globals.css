@@ -4,6 +4,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+::selection {
+  @apply bg-primary text-background;
+}
+
 @layer utilities {
   /* Definição da animação */
   @keyframes scrollInfinite {
@@ -73,20 +77,20 @@
 }
 
 :root {
-  --background: oklch(0.9702 0 0);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(0.848 0.0014 106.43);
+  --card: oklch(0.9642 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(0.5216 0.1421 150.46);
-  --popover-foreground: oklch(0.9702 0 0);
+  --popover-foreground: oklch(1 0 0);
   --primary: oklch(0.5639 0.2096 6.66);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.5869 0.1384 6.41);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.922 0 0);
   --muted-foreground: oklch(0.205 0 0);
   --accent: oklch(0.5869 0.1384 6.41);
-  --accent-foreground: oklch(0.9702 0 0);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);

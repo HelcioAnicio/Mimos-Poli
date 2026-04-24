@@ -1,11 +1,26 @@
+"use client";
 import { IoMenu } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaArrowLeft,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { MdMenuBook } from "react-icons/md";
+import { useState } from "react";
+import { IoMdCloseCircle } from "react-icons/io";
+import { SiGooglemaps } from "react-icons/si";
 
 export default function Home() {
+  const [menu, setMenu] = useState(false);
+
+  const openMenu = () => {
+    setMenu(!menu);
+  };
+
   const trends = [
     {
       title: "Coleção lavanda real",
@@ -88,24 +103,102 @@ export default function Home() {
   return (
     <>
       <header className="bg-card relative w-full">
-        <div className="relative m-auto flex max-w-5xl justify-between px-2 py-5">
+        <div className="relative m-auto flex max-w-5xl items-center justify-between px-5 py-5">
           <h2 className="text-primary font-sans text-2xl font-bold">
             Mimos da Poli
           </h2>
           <nav>
-            <button>
-              <IoMenu className="size-7" />
-            </button>
+            <ul className="flex items-center lg:gap-5">
+              {[
+                { text: "Home", href: "#hero" },
+                { text: "Segmentos", href: "#segments" },
+                { text: "Lançamentos", href: "#trends" },
+                { text: "Parceiros", href: "#partners" },
+                { text: "Sobre mim", href: "#aboutMe" },
+                { text: "Contact", href: "#footer" },
+              ].map((link, index) => (
+                <li key={index} className="hidden list-none lg:inline">
+                  <Link
+                    className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
+                    href={link.href}
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              ))}
+              <li className="hidden w-fit flex-wrap justify-center gap-10 lg:flex">
+                <Link href={"https://google.com"}>
+                  <FaInstagram className="text-secondary-foreground hover:text-popover size-6 transition-all duration-150 hover:scale-110" />
+                </Link>
+                <Link href={"https://google.com"}>
+                  <FaWhatsapp className="text-secondary-foreground hover:text-popover size-6 transition-all duration-150 hover:scale-110" />
+                </Link>
+                <Link href={"https://google.com"}>
+                  <SiGooglemaps className="text-secondary-foreground hover:text-popover size-6 transition-all duration-150 hover:scale-110" />
+                </Link>
+              </li>
+              <button
+                className="cursor-pointer lg:hidden"
+                onClick={() => openMenu()}
+              >
+                <IoMenu className="size-10" />
+              </button>
+            </ul>
           </nav>
         </div>
+        {menu && (
+          <menu className="bg-card absolute top-0 right-0 z-20 flex min-h-max w-full max-w-md flex-col gap-10 p-5 min-[450px]:rounded-bl-xl lg:hidden">
+            <div className="ml-auto">
+              <button className="cursor-pointer" onClick={() => openMenu()}>
+                <IoMdCloseCircle className="size-8 transition-all duration-150 hover:scale-110" />
+              </button>
+            </div>
+            <nav>
+              <ul className="text-primary flex flex-col gap-10">
+                {[
+                  { text: "Home", href: "#hero" },
+                  { text: "Segmentos", href: "#segments" },
+                  { text: "Lançamentos", href: "#trends" },
+                  { text: "Parceiros", href: "#partners" },
+                  { text: "Sobre mim", href: "#aboutMe" },
+                  { text: "Contact", href: "#footer" },
+                ].map((link, index) => (
+                  <li key={index} className="list-none">
+                    <Link
+                      className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full sm:text-lg"
+                      href={link.href}
+                    >
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+                <li className="flex w-fit flex-wrap justify-center gap-10">
+                  <Link href={"https://google.com"}>
+                    <FaInstagram className="text-secondary-foreground hover:text-popover size-10 transition-all duration-150 hover:scale-110" />
+                  </Link>
+                  <Link href={"https://google.com"}>
+                    <FaWhatsapp className="text-secondary-foreground hover:text-popover size-10 transition-all duration-150 hover:scale-110" />
+                  </Link>
+                  <Link href={"https://google.com"}>
+                    <SiGooglemaps className="text-secondary-foreground hover:text-popover size-10 transition-all duration-150 hover:scale-110" />
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <Button>Explorar Coleções</Button>
+          </menu>
+        )}
       </header>
       <main className="w-full">
-        <section className="relative mx-auto h-[calc(100vh-74px)] w-full overflow-y-hidden">
+        <section
+          className="relative mx-auto h-[calc(100vh-74px)] w-full overflow-y-hidden"
+          id="hero"
+        >
           <Image
             className="absolute right-0 -z-20 min-h-dvh w-full object-cover"
             src={"/backgroundImage.svg"}
-            width={1500}
-            height={1500}
+            width={500}
+            height={500}
             alt="background"
             loading="eager"
           />
@@ -123,14 +216,17 @@ export default function Home() {
                 e semijoias, escolhidas a dedo para realçar sua essência.
               </p>
             </div>
-            <div className="flex w-fit flex-wrap justify-center gap-4">
+            <div className="mt-10 flex w-fit flex-wrap justify-center gap-4">
               <Button>Explorar Coleções</Button>
-              <Button variant="secondary">Fala com a Consultoria</Button>
+              <Button variant="secondary">Falar com a Consultoria</Button>
             </div>
           </article>
         </section>
         <section>
-          <article className="mx-auto w-full max-w-5xl px-5 py-20 lg:px-2 xl:px-0">
+          <article
+            className="mx-auto w-full max-w-5xl px-5 py-20 lg:px-2 xl:px-0"
+            id="segments"
+          >
             <div className="flex flex-col gap-4 pb-20 md:pb-32">
               <h2 className="font-notoSerif w-full max-w-40 text-5xl min-[430px]:max-w-96 min-[500px]:max-w-none">
                 Nossas marcas parceiras
@@ -148,7 +244,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="grid auto-rows-[400px] grid-cols-1 gap-8 md:grid-cols-12">
+            <ul className="grid auto-rows-[400px] grid-cols-1 gap-8 md:grid-cols-12">
               {[
                 { name: "Natura", src: "/1.svg" },
                 { name: "Eudora", src: "/1.svg" },
@@ -159,7 +255,7 @@ export default function Home() {
                 const gridClasses = isLarge ? "md:col-span-7" : "md:col-span-5";
 
                 return (
-                  <div
+                  <li
                     key={index}
                     className={`group relative flex w-full overflow-hidden rounded-xl ${gridClasses}`}
                   >
@@ -178,14 +274,17 @@ export default function Home() {
                       </h3>
                       <Button>Explorar</Button>
                     </div>
-                  </div>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </article>
         </section>
-        <section className="bg-muted">
-          <article className="mx-auto flex w-full max-w-5xl flex-col gap-20 overflow-x-hidden px-4 py-10 md:py-20 lg:px-2 xl:px-0">
+        <section className="bg-card">
+          <article
+            className="mx-auto flex w-full max-w-5xl flex-col gap-20 overflow-x-hidden px-4 py-10 md:py-20 lg:px-2 xl:px-0"
+            id="trends"
+          >
             <div className="flex flex-wrap items-end justify-between gap-5">
               <div className="flex flex-col gap-5">
                 <span className="text-secondary text-xs font-light uppercase">
@@ -204,9 +303,9 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="animate-scroll-custom pause-hover flex w-max gap-20 pl-20 whitespace-nowrap">
+            <ul className="animate-scroll-custom pause-hover flex w-max gap-20 pl-20 whitespace-nowrap">
               {trends.map((trend, index) => (
-                <div key={index}>
+                <li key={index}>
                   <figure className="max-w-xs md:max-w-md">
                     <Image
                       width={500}
@@ -222,10 +321,10 @@ export default function Home() {
                       {trend.description}
                     </p>
                   </figure>
-                </div>
+                </li>
               ))}
               {trends.map((trend, index) => (
-                <div key={index}>
+                <li key={index}>
                   <figure className="max-w-xs md:max-w-md">
                     <Image
                       width={500}
@@ -241,13 +340,16 @@ export default function Home() {
                       {trend.description}
                     </p>
                   </figure>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </article>
         </section>
         <section>
-          <article className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-2 py-20 min-[400px]:px-4 lg:px-2 xl:px-0">
+          <article
+            className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-2 py-20 min-[400px]:px-4 lg:px-2 xl:px-0"
+            id="partners"
+          >
             <div className="mx-auto max-w-sm space-y-3 text-center md:max-w-lg">
               <h2 className="font-notoSerif text-3xl font-medium min-[420px]:text-4xl">
                 Catálogos Digitais
@@ -286,7 +388,10 @@ export default function Home() {
           </article>
         </section>
         <section>
-          <article className="flex w-full max-w-5xl flex-wrap gap-10 px-2 min-[400px]:px-4 lg:px-2 xl:px-0">
+          <article
+            className="mx-auto flex w-full max-w-5xl flex-wrap gap-10 px-2 py-20 min-[400px]:px-4 lg:px-2 xl:px-0"
+            id="aboutMe"
+          >
             <Image
               src={"/1.svg"}
               alt={"Imagem da Poliana"}
@@ -319,7 +424,7 @@ export default function Home() {
           </article>
         </section>
         <section>
-          <article className="overflow-x-hidden">
+          <article className="border-t-card overflow-x-hidden border-t-2 py-10">
             <div className="animate-scroll-custom pause-hover flex w-max gap-20 pl-20 whitespace-nowrap">
               {logos.map((logo, index) => (
                 <Image
@@ -339,15 +444,41 @@ export default function Home() {
                   src={logo.img}
                   alt="Imagem de lançamento"
                   key={index}
+                  aria-hidden
+                />
+              ))}
+              {logos.map((logo, index) => (
+                <Image
+                  width={500}
+                  height={500}
+                  className="hidden w-40 object-contain 2xl:inline"
+                  src={logo.img}
+                  alt="Imagem de lançamento"
+                  key={index}
+                  aria-hidden
+                />
+              ))}{" "}
+              {logos.map((logo, index) => (
+                <Image
+                  width={500}
+                  height={500}
+                  className="hidden w-40 object-contain 2xl:inline"
+                  src={logo.img}
+                  alt="Imagem de lançamento"
+                  key={index}
+                  aria-hidden
                 />
               ))}
             </div>
           </article>
         </section>
       </main>
-      <footer>
-        <div className="w-full max-w-5xl px-2 py-20 min-[410px]:px-4 md:gap-10 lg:px-2 xl:px-0">
-          <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-10">
+      <footer className="bg-card w-full">
+        <div
+          className="mx-auto w-full max-w-5xl px-2 pt-20 min-[410px]:px-4 md:gap-10 lg:px-2 xl:px-0"
+          id="footer"
+        >
+          <ul className="grid gap-4 pb-20 sm:grid-cols-2 md:grid-cols-4 md:gap-10">
             <li className="space-y-5">
               <h3 className="text-2xl font-medium">Mimos da Poli</h3>
               <p className="text-secondary-foreground/50 text-sm font-light">
@@ -401,6 +532,15 @@ export default function Home() {
               </Link>
             </li>
           </ul>
+          <p className="border-t-foreground/30 text-foreground/30 relative left-0 border-t py-10">
+            © 2024 Mimos da Poli. Todos os direitos reservados. Desenvolvido por{" "}
+            <Link
+              href={"https://codandoideias-helcioanicios-projects.vercel.app/"}
+              className="underline underline-offset-1"
+            >
+              Helcio Anicio
+            </Link>
+          </p>
         </div>
       </footer>
     </>
