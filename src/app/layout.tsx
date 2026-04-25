@@ -37,7 +37,7 @@ export default function RootLayout({
         inter.variable,
       )}
     >
-      <body className="bg-background font-inter flex min-h-dvh flex-col">
+      <body className="bg-background font-inter flex min-h-dvh flex-col" suppressHydrationWarning={true}>
         {children}
       </body>
     </html>

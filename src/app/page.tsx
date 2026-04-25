@@ -9,17 +9,48 @@ import {
   FaInstagram,
   FaWhatsapp,
 } from "react-icons/fa";
-import { MdMenuBook } from "react-icons/md";
-import { useState } from "react";
+// import { MdMenuBook } from "react-icons/md";
+import { TbPerfume, TbBottle } from "react-icons/tb";
+import { useEffect, useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { SiGooglemaps } from "react-icons/si";
+import { RiDiamondRingLine } from "react-icons/ri";
+import { PiDropSimpleBold } from "react-icons/pi";
+import { GiPerfumeBottle, GiLipstick } from "react-icons/gi";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
+  const [cloudinaryImages, setCloudinaryImages] = useState<string[]>([]);
 
   const openMenu = () => {
     setMenu(!menu);
   };
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadCloudinaryImages = async () => {
+      try {
+        const response = await fetch("/api/cloudinary-images?tag=novidades", {
+          signal: controller.signal,
+        });
+        if (!response.ok) {
+          return;
+        }
+
+        const data = (await response.json()) as { images?: string[] };
+        setCloudinaryImages(data.images ?? []);
+      } catch {
+        // Intentionally keep the page rendered with local fallback images.
+      }
+    };
+
+    loadCloudinaryImages();
+
+    return () => {
+      controller.abort();
+    };
+  }, []);
 
   const trends = [
     {
@@ -64,39 +95,39 @@ export default function Home() {
 
   const companies = [
     {
-      title: "Revista empresa",
+      title: "Revista O Boticário",
       description: "coleção",
-      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      icon: <TbPerfume className="text-xl md:text-2xl" />,
       link: "https://google.com",
     },
     {
-      title: "Revista empresa",
+      title: "Revista Tuppewarwe",
       description: "coleção",
-      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      icon: <TbBottle className="text-xl md:text-2xl" />,
       link: "https://google.com",
     },
     {
-      title: "Revista empresa",
+      title: "Revista Rommanel",
       description: "coleção",
-      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      icon: <RiDiamondRingLine className="text-xl md:text-2xl" />,
       link: "https://google.com",
     },
     {
-      title: "Revista empresa",
+      title: "Revista Natura",
       description: "coleção",
-      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      icon: <PiDropSimpleBold className="text-xl md:text-2xl" />,
       link: "https://google.com",
     },
     {
-      title: "Revista empresa",
+      title: "Revista Jequiti",
       description: "coleção",
-      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      icon: <GiPerfumeBottle className="text-xl md:text-2xl" />,
       link: "https://google.com",
     },
     {
-      title: "Revista empresa",
+      title: "Revista Eudora",
       description: "coleção",
-      icon: <MdMenuBook className="text-xl md:text-2xl" />,
+      icon: <GiLipstick className="text-xl md:text-2xl" />,
       link: "https://google.com",
     },
   ];
@@ -126,15 +157,15 @@ export default function Home() {
                   </Link>
                 </li>
               ))}
-              <li className="hidden w-fit flex-wrap justify-center gap-10 lg:flex">
+              <li className="hidden w-fit flex-wrap justify-center gap-5 lg:flex">
                 <Link href={"https://google.com"}>
-                  <FaInstagram className="text-secondary-foreground hover:text-popover size-6 transition-all duration-150 hover:scale-110" />
+                  <FaInstagram className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
                 <Link href={"https://google.com"}>
-                  <FaWhatsapp className="text-secondary-foreground hover:text-popover size-6 transition-all duration-150 hover:scale-110" />
+                  <FaWhatsapp className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
                 <Link href={"https://google.com"}>
-                  <SiGooglemaps className="text-secondary-foreground hover:text-popover size-6 transition-all duration-150 hover:scale-110" />
+                  <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
               </li>
               <button
@@ -174,13 +205,13 @@ export default function Home() {
                 ))}
                 <li className="flex w-fit flex-wrap justify-center gap-10">
                   <Link href={"https://google.com"}>
-                    <FaInstagram className="text-secondary-foreground hover:text-popover size-10 transition-all duration-150 hover:scale-110" />
+                    <FaInstagram className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                   </Link>
                   <Link href={"https://google.com"}>
-                    <FaWhatsapp className="text-secondary-foreground hover:text-popover size-10 transition-all duration-150 hover:scale-110" />
+                    <FaWhatsapp className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                   </Link>
                   <Link href={"https://google.com"}>
-                    <SiGooglemaps className="text-secondary-foreground hover:text-popover size-10 transition-all duration-150 hover:scale-110" />
+                    <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                   </Link>
                 </li>
               </ul>
@@ -237,7 +268,7 @@ export default function Home() {
                   compromisso com a qualidade, ética e beleza atemporal.
                 </p>
                 <Link
-                  href=""
+                  href="#partners"
                   className="text-sm font-light text-yellow-600 uppercase underline underline-offset-2"
                 >
                   Ver todos os parceiros
@@ -246,10 +277,10 @@ export default function Home() {
             </div>
             <ul className="grid auto-rows-[400px] grid-cols-1 gap-8 md:grid-cols-12">
               {[
-                { name: "Natura", src: "/1.svg" },
-                { name: "Eudora", src: "/1.svg" },
-                { name: "O Boticário", src: "/1.svg" },
-                { name: "Rommanel", src: "/1.svg" },
+                { name: "Natura", src: "/natura.webp" },
+                { name: "Eudora", src: "/eudora.webp" },
+                { name: "O Boticário", src: "/boticario.webp" },
+                { name: "Rommanel", src: "/rommanel.webp" },
               ].map((brand, index) => {
                 const isLarge = index === 0 || index === 3;
                 const gridClasses = isLarge ? "md:col-span-7" : "md:col-span-5";
@@ -263,6 +294,7 @@ export default function Home() {
                       src={brand.src}
                       alt={`logo do ${brand.name}`}
                       fill
+                      sizes="500"
                       className="absolute inset-0 z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
 
@@ -310,14 +342,19 @@ export default function Home() {
                     <Image
                       width={500}
                       height={500}
-                      className="h-115 rounded-md object-cover"
-                      src={trend.img}
+                      className="h-150 rounded-md object-cover object-top"
+                      loading="lazy"
+                      src={
+                        cloudinaryImages.length > 0
+                          ? cloudinaryImages[index % cloudinaryImages.length]
+                          : trend.img
+                      }
                       alt="Imagem de lançamento"
                     />
-                    <figcaption className="font-notoSerif text-xl">
+                    <figcaption className="font-notoSerif mt-5 text-xl">
                       {trend.title} {index}
                     </figcaption>
-                    <p className="text-card text-sm uppercase">
+                    <p className="text-ring text-sm uppercase">
                       {trend.description}
                     </p>
                   </figure>
@@ -329,14 +366,19 @@ export default function Home() {
                     <Image
                       width={500}
                       height={500}
-                      className="h-115 rounded-md object-cover"
-                      src={trend.img}
+                      className="h-150 rounded-md object-cover object-top"
+                      loading="lazy"
+                      src={
+                        cloudinaryImages.length > 0
+                          ? cloudinaryImages[index % cloudinaryImages.length]
+                          : trend.img
+                      }
                       alt="Imagem de lançamento"
                     />
-                    <figcaption className="font-notoSerif text-xl">
+                    <figcaption className="font-notoSerif mt-5 text-xl">
                       {trend.title} {index}
                     </figcaption>
-                    <p className="text-card text-sm uppercase">
+                    <p className="text-ring text-sm uppercase">
                       {trend.description}
                     </p>
                   </figure>
@@ -351,7 +393,7 @@ export default function Home() {
             id="partners"
           >
             <div className="mx-auto max-w-sm space-y-3 text-center md:max-w-lg">
-              <h2 className="font-notoSerif text-3xl font-medium min-[420px]:text-4xl">
+              <h2 className="font-notoSerif w-full max-w-40 text-5xl min-[430px]:max-w-96 min-[500px]:max-w-none">
                 Catálogos Digitais
               </h2>
               <p className="text-secondary-foreground/60 text-sm">
@@ -365,7 +407,7 @@ export default function Home() {
                   key={index}
                   className="flex flex-col items-center gap-3 text-center"
                 >
-                  <span className="bg-card/40 hover:bg-primary hover:text-background text-card-foreground rounded-full p-5 transition-all duration-300">
+                  <span className="bg-muted hover:bg-primary hover:text-background text-card-foreground rounded-full p-5 transition-all duration-300">
                     {company.icon}
                   </span>
                   <div>
