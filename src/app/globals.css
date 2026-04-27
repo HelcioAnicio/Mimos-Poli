@@ -22,7 +22,7 @@
   /* Classe utilitária personalizada */
   .animate-scroll-custom {
     display: flex;
-    animation: scrollInfinite 25s linear infinite;
+    animation: scrollInfinite 40s linear infinite;
   }
 
   /* Opcional: Pausar no hover */
@@ -154,5 +154,6 @@
   }
   html {
     @apply font-inter;
+    font-display: swap;
   }
 }

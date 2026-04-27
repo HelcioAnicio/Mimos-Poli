@@ -54,33 +54,21 @@ export default function Home() {
 
   const trends = [
     {
-      title: "Coleção lavanda real",
-      description: "Perfumes",
       img: "/1.svg",
     },
     {
-      title: "Coleção lavanda real",
-      description: "Perfumes",
       img: "/1.svg",
     },
     {
-      title: "Coleção lavanda real",
-      description: "Perfumes",
       img: "/1.svg",
     },
     {
-      title: "Coleção lavanda real",
-      description: "Perfumes",
       img: "/1.svg",
     },
     {
-      title: "Coleção lavanda real",
-      description: "Perfumes",
       img: "/1.svg",
     },
     {
-      title: "Coleção lavanda real",
-      description: "Perfumes",
       img: "/1.svg",
     },
   ];
@@ -98,37 +86,37 @@ export default function Home() {
       title: "Revista O Boticário",
       description: "coleção",
       icon: <TbPerfume className="text-xl md:text-2xl" />,
-      link: "https://google.com",
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20O%20Boticário",
     },
     {
-      title: "Revista Tuppewarwe",
+      title: "Revista Tupperware",
       description: "coleção",
       icon: <TbBottle className="text-xl md:text-2xl" />,
-      link: "https://google.com",
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Tupperware",
     },
     {
       title: "Revista Rommanel",
       description: "coleção",
       icon: <RiDiamondRingLine className="text-xl md:text-2xl" />,
-      link: "https://google.com",
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Rommanel",
     },
     {
       title: "Revista Natura",
       description: "coleção",
       icon: <PiDropSimpleBold className="text-xl md:text-2xl" />,
-      link: "https://google.com",
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Natura",
     },
     {
       title: "Revista Jequiti",
       description: "coleção",
       icon: <GiPerfumeBottle className="text-xl md:text-2xl" />,
-      link: "https://google.com",
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Jequiti",
     },
     {
       title: "Revista Eudora",
       description: "coleção",
       icon: <GiLipstick className="text-xl md:text-2xl" />,
-      link: "https://google.com",
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Eudora",
     },
   ];
   return (
@@ -158,13 +146,17 @@ export default function Home() {
                 </li>
               ))}
               <li className="hidden w-fit flex-wrap justify-center gap-5 lg:flex">
-                <Link href={"https://google.com"}>
+                <Link href={"https://www.instagram.com/mimos.poli/"}>
                   <FaInstagram className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
-                <Link href={"https://google.com"}>
+                <Link
+                  href={
+                    "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                  }
+                >
                   <FaWhatsapp className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
-                <Link href={"https://google.com"}>
+                <Link href={"https://maps.app.goo.gl/5e67Hm6YHZAgQW9j9"}>
                   <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
               </li>
@@ -204,13 +196,17 @@ export default function Home() {
                   </li>
                 ))}
                 <li className="flex w-fit flex-wrap justify-center gap-10">
-                  <Link href={"https://google.com"}>
+                  <Link href={"https://www.instagram.com/mimos.poli/"}>
                     <FaInstagram className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                   </Link>
-                  <Link href={"https://google.com"}>
+                  <Link
+                    href={
+                      "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                    }
+                  >
                     <FaWhatsapp className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                   </Link>
-                  <Link href={"https://google.com"}>
+                  <Link href={"https://maps.app.goo.gl/5e67Hm6YHZAgQW9j9"}>
                     <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                   </Link>
                 </li>
@@ -226,14 +222,17 @@ export default function Home() {
           id="hero"
         >
           <Image
-            className="absolute right-0 -z-20 min-h-dvh w-full object-cover"
+            className="absolute right-0 -z-20 min-h-dvh w-full object-cover placeholder:blur-lg"
             src={"/backgroundImage.svg"}
-            width={500}
-            height={500}
+            fill
             alt="background"
-            loading="eager"
+            priority
+            quality={75}
           />
-          <div className="bg-foreground/60 absolute -z-10 min-h-full w-full" />
+          <div
+            aria-hidden
+            className="bg-foreground/60 absolute -z-10 min-h-full w-full"
+          />
           <article className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-2 px-5 min-[430px]:gap-16 sm:gap-20 lg:px-2 xl:px-0">
             <div className="flex flex-col gap-5">
               <span className="text-background font-mono text-xs uppercase md:text-base">
@@ -298,7 +297,10 @@ export default function Home() {
                       className="absolute inset-0 z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
 
-                    <div className="absolute inset-0 z-20 bg-linear-to-t from-black/80 to-transparent" />
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 z-20 bg-linear-to-t from-black/80 to-transparent"
+                    />
 
                     <div className="relative z-30 flex h-full flex-col justify-end gap-3 px-10 pb-5">
                       <h3 className="text-background font-notoSerif text-4xl">
@@ -314,10 +316,10 @@ export default function Home() {
         </section>
         <section className="bg-card">
           <article
-            className="mx-auto flex w-full max-w-5xl flex-col gap-20 overflow-x-hidden px-4 py-10 md:py-20 lg:px-2 xl:px-0"
+            className="mx-auto flex w-full flex-col gap-20 overflow-x-hidden px-4 py-10 md:py-20 lg:px-2 xl:px-0"
             id="trends"
           >
-            <div className="flex flex-wrap items-end justify-between gap-5">
+            <div className="mx-auto flex w-full max-w-5xl flex-wrap items-end justify-between gap-5">
               <div className="flex flex-col gap-5">
                 <span className="text-secondary text-xs font-light uppercase">
                   Destaques
@@ -335,33 +337,57 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <ul className="animate-scroll-custom pause-hover flex w-max gap-20 pl-20 whitespace-nowrap">
+            <ul className="animate-scroll-custom pause-hover relative z-20 flex w-max gap-20 pl-20 whitespace-nowrap">
               {trends.map((trend, index) => (
                 <li key={index}>
-                  <figure className="max-w-xs md:max-w-md">
-                    <Image
-                      width={500}
-                      height={500}
-                      className="h-150 rounded-md object-cover object-top"
-                      loading="lazy"
-                      src={
-                        cloudinaryImages.length > 0
-                          ? cloudinaryImages[index % cloudinaryImages.length]
-                          : trend.img
-                      }
-                      alt="Imagem de lançamento"
-                    />
-                    <figcaption className="font-notoSerif mt-5 text-xl">
-                      {trend.title} {index}
-                    </figcaption>
-                    <p className="text-ring text-sm uppercase">
-                      {trend.description}
-                    </p>
-                  </figure>
+                  <Link
+                    href={
+                      "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                    }
+                  >
+                    <figure className="max-w-xs md:max-w-md">
+                      <Image
+                        width={500}
+                        height={500}
+                        className="h-150 rounded-md object-cover object-top"
+                        loading="lazy"
+                        src={
+                          cloudinaryImages.length > 0
+                            ? cloudinaryImages[index % cloudinaryImages.length]
+                            : trend.img
+                        }
+                        alt="Imagem de lançamento"
+                      />
+                    </figure>
+                  </Link>
                 </li>
               ))}
               {trends.map((trend, index) => (
-                <li key={index}>
+                <li key={index} aria-hidden>
+                  <Link
+                    href={
+                      "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                    }
+                  >
+                    <figure className="max-w-xs md:max-w-md">
+                      <Image
+                        width={500}
+                        height={500}
+                        className="h-150 rounded-md object-cover object-top"
+                        loading="lazy"
+                        src={
+                          cloudinaryImages.length > 0
+                            ? cloudinaryImages[index % cloudinaryImages.length]
+                            : trend.img
+                        }
+                        alt="Imagem de lançamento"
+                      />
+                    </figure>
+                  </Link>
+                </li>
+              ))}{" "}
+              {trends.map((trend, index) => (
+                <li key={index} aria-hidden className="hidden 2xl:inline">
                   <figure className="max-w-xs md:max-w-md">
                     <Image
                       width={500}
@@ -375,12 +401,24 @@ export default function Home() {
                       }
                       alt="Imagem de lançamento"
                     />
-                    <figcaption className="font-notoSerif mt-5 text-xl">
-                      {trend.title} {index}
-                    </figcaption>
-                    <p className="text-ring text-sm uppercase">
-                      {trend.description}
-                    </p>
+                  </figure>
+                </li>
+              ))}{" "}
+              {trends.map((trend, index) => (
+                <li key={index} aria-hidden className="hidden 2xl:inline">
+                  <figure className="max-w-xs md:max-w-md">
+                    <Image
+                      width={500}
+                      height={500}
+                      className="h-150 rounded-md object-cover object-top"
+                      loading="lazy"
+                      src={
+                        cloudinaryImages.length > 0
+                          ? cloudinaryImages[index % cloudinaryImages.length]
+                          : trend.img
+                      }
+                      alt="Imagem de lançamento"
+                    />
                   </figure>
                 </li>
               ))}
@@ -551,13 +589,17 @@ export default function Home() {
               </p>
               <Link
                 className="text-secondary-foreground/50 hover:text-secondary hover:decoration-secondary block text-sm font-light hover:underline hover:underline-offset-2"
-                href={"https://google.com"}
+                href={
+                  "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20envios%20e%20devolu%C3%A7%C3%B5es"
+                }
               >
                 Envios e Devoluções
               </Link>
               <Link
                 className="text-secondary-foreground/50 hover:text-secondary hover:decoration-secondary block text-sm font-light hover:underline hover:underline-offset-2"
-                href={"https://google.com"}
+                href={
+                  "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                }
               >
                 Fale Conosco
               </Link>
@@ -568,7 +610,7 @@ export default function Home() {
               </p>
               <Link
                 className="text-secondary-foreground/50 hover:text-secondary hover:decoration-secondary block text-sm font-light hover:underline hover:underline-offset-2"
-                href={"https://google.com"}
+                href={"#partners"}
               >
                 Nossas Marcas
               </Link>
