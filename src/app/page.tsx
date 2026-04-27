@@ -227,13 +227,14 @@ export default function Home() {
             fill
             alt="background"
             priority
+            fetchPriority="high"
             quality={75}
           />
           <div
             aria-hidden
             className="bg-foreground/60 absolute -z-10 min-h-full w-full"
           />
-          <article className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-2 px-5 min-[430px]:gap-16 sm:gap-20 lg:px-2 xl:px-0">
+          <article className="min-[]: mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-2 px-5 min-[430px]:gap-16 min-[1100px]:gap-20 sm:gap-20 lg:gap-5 lg:px-2 xl:px-0">
             <div className="flex flex-col gap-5">
               <span className="text-background font-mono text-xs uppercase md:text-base">
                 O Atelier Digital
