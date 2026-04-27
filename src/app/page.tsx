@@ -54,22 +54,22 @@ export default function Home() {
 
   const trends = [
     {
-      img: "/1.svg",
+      img: "/1.webp",
     },
     {
-      img: "/1.svg",
+      img: "/1.webp",
     },
     {
-      img: "/1.svg",
+      img: "/1.webp",
     },
     {
-      img: "/1.svg",
+      img: "/1.webp",
     },
     {
-      img: "/1.svg",
+      img: "/1.webp",
     },
     {
-      img: "/1.svg",
+      img: "/1.webp",
     },
   ];
 
@@ -223,7 +223,7 @@ export default function Home() {
         >
           <Image
             className="absolute right-0 -z-20 min-h-dvh w-full object-cover placeholder:blur-lg"
-            src={"/backgroundImage.svg"}
+            src={"/backgroundImage.webp"}
             fill
             alt="background"
             priority
@@ -473,7 +473,7 @@ export default function Home() {
             id="aboutMe"
           >
             <Image
-              src={"/1.svg"}
+              src={"/1.webp"}
               alt={"Imagem da Poliana"}
               height={500}
               width={500}
