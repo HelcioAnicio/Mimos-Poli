@@ -257,12 +257,8 @@ export default function Home() {
                   </li>
                 </ul>
               </nav>
-              <Link
-                href={
-                  "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
-                }
-              >
-                <Button>Explorar Coleções</Button>
+              <Link href={"#partners"}>
+                <Button onClick={() => openMenu()}>Explorar Coleções</Button>
               </Link>
             </menu>
           </div>
@@ -367,7 +363,11 @@ export default function Home() {
                       <h3 className="text-background font-notoSerif text-4xl">
                         {brand.name}
                       </h3>
-                      <Button>Explorar</Button>
+                      <Link
+                        href={`https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20${brand.name}`}
+                      >
+                        <Button>Explorar</Button>
+                      </Link>
                     </div>
                   </li>
                 );
@@ -534,7 +534,7 @@ export default function Home() {
             id="aboutMe"
           >
             <Image
-              src={"/1.webp"}
+              src={"/poliana.png"}
               alt={"Imagem da Poliana"}
               height={500}
               width={500}
