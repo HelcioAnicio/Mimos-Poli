@@ -16,7 +16,15 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { SiGooglemaps } from "react-icons/si";
 import { RiDiamondRingLine } from "react-icons/ri";
 import { PiDropSimpleBold } from "react-icons/pi";
-import { GiPerfumeBottle, GiLipstick } from "react-icons/gi";
+import { FaBottleDroplet } from "react-icons/fa6";
+import {
+  GiPerfumeBottle,
+  GiLipstick,
+  GiLips,
+  GiDelicatePerfume,
+  GiDropEarrings,
+  GiSpiralBottle,
+} from "react-icons/gi";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -118,6 +126,42 @@ export default function Home() {
       icon: <GiLipstick className="text-xl md:text-2xl" />,
       link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Eudora",
     },
+    {
+      title: "Revista Ciclo",
+      description: "coleção",
+      icon: <GiSpiralBottle className="text-xl md:text-2xl" />,
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Eudora",
+    },
+    {
+      title: "Revista K Constância",
+      description: "coleção",
+      icon: <TbPerfume className="text-xl md:text-2xl" />,
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Eudora",
+    },
+    {
+      title: "Revista Racco",
+      description: "coleção",
+      icon: <FaBottleDroplet className="text-xl md:text-2xl" />,
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Eudora",
+    },
+    {
+      title: "Revista Barume",
+      description: "coleção",
+      icon: <GiDropEarrings className="text-xl md:text-2xl" />,
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Eudora",
+    },
+    {
+      title: "Revista L'acqua di Fiore",
+      description: "coleção",
+      icon: <GiDelicatePerfume className="text-xl md:text-2xl" />,
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Eudora",
+    },
+    {
+      title: "Revista Avon",
+      description: "coleção",
+      icon: <GiLips className="text-xl md:text-2xl" />,
+      link: "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20Eudora",
+    },
   ];
   return (
     <>
@@ -170,50 +214,58 @@ export default function Home() {
           </nav>
         </div>
         {menu && (
-          <menu className="bg-card absolute top-0 right-0 z-20 flex min-h-max w-full max-w-md flex-col gap-10 p-5 min-[450px]:rounded-bl-xl lg:hidden">
-            <div className="ml-auto">
-              <button className="cursor-pointer" onClick={() => openMenu()}>
-                <IoMdCloseCircle className="size-8 transition-all duration-150 hover:scale-110" />
-              </button>
-            </div>
-            <nav>
-              <ul className="text-primary flex flex-col gap-10">
-                {[
-                  { text: "Home", href: "#hero" },
-                  { text: "Segmentos", href: "#segments" },
-                  { text: "Lançamentos", href: "#trends" },
-                  { text: "Parceiros", href: "#partners" },
-                  { text: "Sobre mim", href: "#aboutMe" },
-                  { text: "Contact", href: "#footer" },
-                ].map((link, index) => (
-                  <li key={index} className="list-none">
+          <div className="bg-foreground/85 absolute top-0 right-0 z-30 min-h-screen w-screen transition-all duration-300">
+            <menu className="bg-card absolute top-0 right-0 z-40 flex min-h-max w-full max-w-md flex-col gap-10 p-5 min-[450px]:rounded-bl-xl lg:hidden">
+              <div className="ml-auto">
+                <button className="cursor-pointer" onClick={() => openMenu()}>
+                  <IoMdCloseCircle className="size-8 transition-all duration-150 hover:scale-110" />
+                </button>
+              </div>
+              <nav>
+                <ul className="text-primary flex flex-col gap-10">
+                  {[
+                    { text: "Home", href: "#hero" },
+                    { text: "Segmentos", href: "#segments" },
+                    { text: "Lançamentos", href: "#trends" },
+                    { text: "Parceiros", href: "#partners" },
+                    { text: "Sobre mim", href: "#aboutMe" },
+                    { text: "Contact", href: "#footer" },
+                  ].map((link, index) => (
+                    <li key={index} className="list-none">
+                      <Link
+                        className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full sm:text-lg"
+                        href={link.href}
+                      >
+                        {link.text}
+                      </Link>
+                    </li>
+                  ))}
+                  <li className="flex w-fit flex-wrap justify-center gap-10">
+                    <Link href={"https://www.instagram.com/mimos.poli/"}>
+                      <FaInstagram className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
+                    </Link>
                     <Link
-                      className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full sm:text-lg"
-                      href={link.href}
+                      href={
+                        "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                      }
                     >
-                      {link.text}
+                      <FaWhatsapp className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
+                    </Link>
+                    <Link href={"https://maps.app.goo.gl/5e67Hm6YHZAgQW9j9"}>
+                      <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                     </Link>
                   </li>
-                ))}
-                <li className="flex w-fit flex-wrap justify-center gap-10">
-                  <Link href={"https://www.instagram.com/mimos.poli/"}>
-                    <FaInstagram className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
-                  </Link>
-                  <Link
-                    href={
-                      "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
-                    }
-                  >
-                    <FaWhatsapp className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
-                  </Link>
-                  <Link href={"https://maps.app.goo.gl/5e67Hm6YHZAgQW9j9"}>
-                    <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-            <Button>Explorar Coleções</Button>
-          </menu>
+                </ul>
+              </nav>
+              <Link
+                href={
+                  "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                }
+              >
+                <Button>Explorar Coleções</Button>
+              </Link>
+            </menu>
+          </div>
         )}
       </header>
       <main className="w-full">
@@ -248,8 +300,16 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-10 flex w-fit flex-wrap justify-center gap-4">
-              <Button>Explorar Coleções</Button>
-              <Button variant="secondary">Falar com a Consultoria</Button>
+              <Link href={"#partners"}>
+                <Button>Explorar Coleções</Button>
+              </Link>
+              <Link
+                href={
+                  "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                }
+              >
+                <Button variant="secondary">Falar com a Consultoria</Button>
+              </Link>
             </div>
           </article>
         </section>
@@ -440,7 +500,7 @@ export default function Home() {
                 últimas tendências diretamente do seu dispositivo.
               </p>
             </div>
-            <ul className="mx-auto grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-16 lg:grid-cols-4 lg:gap-x-24">
+            <ul className="mx-auto grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-16 lg:grid-cols-3 lg:gap-x-24">
               {companies.map((company, index) => (
                 <li
                   key={index}
