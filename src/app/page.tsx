@@ -82,11 +82,17 @@ export default function Home() {
   ];
 
   const logos = [
-    { img: "/tupperware.png" },
-    { img: "/eudora.png" },
-    { img: "/boticário.png" },
-    { img: "/jequiti.png" },
-    { img: "/natura.png" },
+    { img: "/tupperware.png", name: "Tupperware" },
+    { img: "/eudora.png", name: "Eudora" },
+    { img: "/boticario.png", name: "O Boticário" },
+    { img: "/jequiti.png", name: "Jequiti" },
+    { img: "/natura.png", name: "Natura" },
+    { img: "/avon.png", name: "Avon" },
+    { img: "/barome.webp", name: "Barume" },
+    { img: "/lacquadifiori.png", name: "L'acqua di Fiore" },
+    { img: "/racco.png", name: "Racco" },
+    { img: "/ciclo.png", name: "Ciclo" },
+    { img: "/rommanel.png", name: "Rommanel" },
   ];
 
   const companies = [
@@ -577,7 +583,7 @@ export default function Home() {
                   height={500}
                   className="w-40 object-contain"
                   src={logo.img}
-                  alt="Imagem de lançamento"
+                  alt={`Logo da companhia ${logo.name}`}
                   key={index}
                 />
               ))}
@@ -587,7 +593,7 @@ export default function Home() {
                   height={500}
                   className="w-40 object-contain"
                   src={logo.img}
-                  alt="Imagem de lançamento"
+                  alt={`Logo da companhia ${logo.name}`}
                   key={index}
                   aria-hidden
                 />
@@ -598,7 +604,7 @@ export default function Home() {
                   height={500}
                   className="hidden w-40 object-contain 2xl:inline"
                   src={logo.img}
-                  alt="Imagem de lançamento"
+                  alt={`Logo da companhia ${logo.name}`}
                   key={index}
                   aria-hidden
                 />
@@ -609,7 +615,7 @@ export default function Home() {
                   height={500}
                   className="hidden w-40 object-contain 2xl:inline"
                   src={logo.img}
-                  alt="Imagem de lançamento"
+                  alt={`Logo da companhia ${logo.name}`}
                   key={index}
                   aria-hidden
                 />
