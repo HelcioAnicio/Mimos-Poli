@@ -558,7 +558,11 @@ export default function Home() {
                 item é selecionado com o olhar atento de quem entende que a
                 beleza é um ato de carinho consigo mesma.
               </p>
-              <Link href={""}>
+              <Link
+                href={
+                  "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
+                }
+              >
                 <Button>Nossa história</Button>
               </Link>
             </div>
