@@ -91,7 +91,7 @@ export default function Home() {
     { img: "/barome.webp", name: "Barume" },
     { img: "/lacquadifiori.png", name: "L'acqua di Fiore" },
     { img: "/racco.png", name: "Racco" },
-    { img: "/ciclo.png", name: "Ciclo" },
+    { img: "/ciclo.webp", name: "Ciclo" },
     { img: "/rommanel.png", name: "Rommanel" },
   ];
 
