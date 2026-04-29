@@ -218,19 +218,21 @@ export default function Home() {
                   <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
               </li>
-              <button
-                className="cursor-pointer lg:hidden"
-                aria-label="Abrir menu mobile"
-                onClick={() => openMenu()}
-              >
-                <IoMenu className="size-10" />
-              </button>
+              <li>
+                <button
+                  className="cursor-pointer lg:hidden"
+                  aria-label="Abrir menu mobile"
+                  onClick={() => openMenu()}
+                >
+                  <IoMenu className="size-10" />
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
         {menu && (
-          <div className="bg-foreground/85 absolute top-0 right-0 z-30 min-h-screen w-screen transition-all duration-300">
-            <menu className="bg-card absolute top-0 right-0 z-40 flex min-h-max w-full max-w-md flex-col gap-10 p-5 min-[450px]:rounded-bl-xl lg:hidden">
+          <div className="bg-foreground/85 absolute top-0 right-0 z-30 min-h-screen w-screen touch-none overflow-hidden transition-all duration-300">
+            <menu className="bg-card absolute top-0 right-0 z-40 flex min-h-max w-full max-w-md flex-col gap-5 p-5 min-[450px]:rounded-bl-xl lg:hidden">
               <div className="ml-auto">
                 <button
                   className="cursor-pointer"
@@ -241,7 +243,7 @@ export default function Home() {
                 </button>
               </div>
               <nav>
-                <ul className="text-primary flex flex-col gap-10">
+                <ul className="text-primary flex flex-col gap-5 sm:gap-10">
                   {[
                     { text: "Home", href: "#hero" },
                     { text: "Segmentos", href: "#segments" },
@@ -421,14 +423,14 @@ export default function Home() {
                   Novidades e Tendências
                 </h2>
               </div>
-              <div className="flex gap-7">
+              {/* <div className="flex gap-7">
                 <button className="bg-muted border-foreground/30 rounded-full border p-4">
                   <FaArrowLeft />
                 </button>
                 <button className="bg-muted border-foreground/30 rounded-full border p-4">
                   <FaArrowRight />
                 </button>
-              </div>
+              </div> */}
             </div>
             <ul className="animate-scroll-custom pause-hover relative z-20 flex w-max gap-20 pl-20 whitespace-nowrap">
               {trends.map((trend, index) => (
