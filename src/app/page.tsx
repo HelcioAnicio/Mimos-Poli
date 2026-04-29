@@ -184,28 +184,37 @@ export default function Home() {
                   <Link
                     className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
                     href={link.href}
+                    aria-label={`Navegar até a sessão ${link.href.substring(1)}`}
                   >
                     {link.text}
                   </Link>
                 </li>
               ))}
               <li className="hidden w-fit flex-wrap justify-center gap-5 lg:flex">
-                <Link href={"https://www.instagram.com/mimos.poli/"}>
+                <Link
+                  href={"https://www.instagram.com/mimos.poli/"}
+                  aria-label="Navegar para o perfil do instagram"
+                >
                   <FaInstagram className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
                 <Link
+                  aria-label="Navegar para conversar pelo WhatsApp"
                   href={
                     "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
                   }
                 >
                   <FaWhatsapp className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
-                <Link href={"https://maps.app.goo.gl/5e67Hm6YHZAgQW9j9"}>
+                <Link
+                  href={"https://maps.app.goo.gl/5e67Hm6YHZAgQW9j9"}
+                  aria-label="Navegar para o Google Maps"
+                >
                   <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                 </Link>
               </li>
               <button
                 className="cursor-pointer lg:hidden"
+                aria-label="Abrir menu mobile"
                 onClick={() => openMenu()}
               >
                 <IoMenu className="size-10" />
@@ -217,7 +226,11 @@ export default function Home() {
           <div className="bg-foreground/85 absolute top-0 right-0 z-30 min-h-screen w-screen transition-all duration-300">
             <menu className="bg-card absolute top-0 right-0 z-40 flex min-h-max w-full max-w-md flex-col gap-10 p-5 min-[450px]:rounded-bl-xl lg:hidden">
               <div className="ml-auto">
-                <button className="cursor-pointer" onClick={() => openMenu()}>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => openMenu()}
+                  aria-label="Fechar menu mobile"
+                >
                   <IoMdCloseCircle className="size-8 transition-all duration-150 hover:scale-110" />
                 </button>
               </div>
@@ -234,6 +247,7 @@ export default function Home() {
                     <li key={index} className="list-none">
                       <Link
                         className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full sm:text-lg"
+                        aria-label={`Navegar até a sessão ${link.href.substring(1)}`}
                         href={link.href}
                       >
                         {link.text}
@@ -241,23 +255,31 @@ export default function Home() {
                     </li>
                   ))}
                   <li className="flex w-fit flex-wrap justify-center gap-10">
-                    <Link href={"https://www.instagram.com/mimos.poli/"}>
+                    <Link
+                      href={"https://www.instagram.com/mimos.poli/"}
+                      aria-label="Navegar para o perfil do instagram"
+                    >
                       <FaInstagram className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                     </Link>
                     <Link
+                      aria-label="Navegar para conversar pelo WhatsApp"
                       href={
                         "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
                       }
                     >
                       <FaWhatsapp className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                     </Link>
-                    <Link href={"https://maps.app.goo.gl/5e67Hm6YHZAgQW9j9"}>
+                    <Link
+                      href={"https://maps.app.goo.gl/5e67Hm6YHZAgQW9j9"}
+                      aria-label="Navegar para o Google Maps"
+                    >
                       <SiGooglemaps className="hover:text-primary size-6 text-gray-700 transition-all duration-150 hover:scale-110" />
                     </Link>
                   </li>
                 </ul>
               </nav>
               <Link
+                aria-label="Navegar a sessão de revista dos fornecedores"
                 href={
                   "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
                 }
@@ -301,7 +323,9 @@ export default function Home() {
             </div>
             <div className="mt-10 flex w-fit flex-wrap justify-center gap-4">
               <Link href={"#partners"}>
-                <Button>Explorar Coleções</Button>
+                <Button aria-label="Navegar a sessão de revista dos parceiros">
+                  Explorar Coleções
+                </Button>
               </Link>
               <Link
                 href={
@@ -562,6 +586,7 @@ export default function Home() {
                 href={
                   "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
                 }
+                aria-label="Abrir conversa do WhatsApp e conversar com a consultora"
               >
                 <Button>Nossa história</Button>
               </Link>
