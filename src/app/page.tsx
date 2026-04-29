@@ -171,7 +171,7 @@ export default function Home() {
   ];
   return (
     <>
-      <header className="bg-card relative w-full">
+      <header className="bg-card fixed top-0 left-0 z-50 w-full">
         <div className="relative m-auto flex max-w-5xl items-center justify-between px-5 py-5">
           <h2 className="text-primary font-sans text-2xl font-bold">
             Mimos da Poli
@@ -190,6 +190,7 @@ export default function Home() {
                   <Link
                     className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
                     href={link.href}
+                    onClick={() => openMenu()}
                     aria-label={`Navegar até a sessão ${link.href.substring(1)}`}
                   >
                     {link.text}
@@ -256,6 +257,7 @@ export default function Home() {
                       <Link
                         className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full sm:text-lg"
                         aria-label={`Navegar até a sessão ${link.href.substring(1)}`}
+                        onClick={() => openMenu()}
                         href={link.href}
                       >
                         {link.text}
@@ -298,7 +300,7 @@ export default function Home() {
       </header>
       <main className="w-full">
         <section
-          className="relative mx-auto h-[calc(100vh-74px)] w-full overflow-y-hidden"
+          className="relative mx-auto h-screen w-full overflow-y-hidden"
           id="hero"
         >
           <Image
@@ -319,10 +321,10 @@ export default function Home() {
               <span className="text-background font-mono text-xs uppercase md:text-base">
                 O Atelier Digital
               </span>
-              <h1 className="text-background font-notoSerif max-w-sm text-5xl min-[430px]:text-6xl sm:max-w-xl sm:text-7xl">
+              <h1 className="text-background font-notoSerif max-w-sm text-5xl min-[430px]:text-6xl sm:max-w-xl sm:text-7xl lg:text-6xl xl:text-7xl">
                 A Curadoria de beleza que você merece
               </h1>
-              <p className="text-background sm: w-full max-w-md font-light min-[450px]:max-w-xl sm:text-xl">
+              <p className="text-background sm: w-full max-w-md font-light min-[450px]:max-w-xl sm:text-xl lg:text-lg xl:text-xl">
                 Descubra uma seleção exclusiva das melhores marcas de perfumaria
                 e semijoias, escolhidas a dedo para realçar sua essência.
               </p>
@@ -345,10 +347,10 @@ export default function Home() {
         </section>
         <section>
           <article
-            className="mx-auto w-full max-w-5xl px-5 py-20 lg:px-2 xl:px-0"
+            className="mx-auto w-full max-w-5xl px-5 py-24 lg:px-2 xl:px-0"
             id="segments"
           >
-            <div className="flex flex-col gap-4 pb-20 md:pb-32">
+            <div className="flex flex-col gap-4 pb-20 xl:pb-32">
               <h2 className="font-notoSerif w-full max-w-40 text-5xl min-[430px]:max-w-96 min-[500px]:max-w-none">
                 Nossas marcas parceiras
               </h2>
@@ -411,7 +413,7 @@ export default function Home() {
         </section>
         <section className="bg-card">
           <article
-            className="mx-auto flex w-full flex-col gap-20 overflow-x-hidden px-4 py-10 md:py-20 lg:px-2 xl:px-0"
+            className="mx-auto flex w-full flex-col gap-20 overflow-x-hidden px-4 py-24 md:py-20 lg:px-2 xl:px-0"
             id="trends"
           >
             <div className="mx-auto flex w-full max-w-5xl flex-wrap items-end justify-between gap-5">
@@ -435,26 +437,20 @@ export default function Home() {
             <ul className="animate-scroll-custom pause-hover relative z-20 flex w-max gap-20 pl-20 whitespace-nowrap">
               {trends.map((trend, index) => (
                 <li key={index}>
-                  <Link
-                    href={
-                      "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
-                    }
-                  >
-                    <figure className="max-w-xs md:max-w-md">
-                      <Image
-                        width={500}
-                        height={500}
-                        className="h-150 rounded-md object-cover object-top"
-                        loading="lazy"
-                        src={
-                          cloudinaryImages.length > 0
-                            ? cloudinaryImages[index % cloudinaryImages.length]
-                            : trend.img
-                        }
-                        alt="Imagem de lançamento"
-                      />
-                    </figure>
-                  </Link>
+                  <figure className="max-w-xs md:max-w-md">
+                    <Image
+                      width={500}
+                      height={500}
+                      className="h-screen max-h-130 rounded-md object-cover object-top"
+                      loading="lazy"
+                      src={
+                        cloudinaryImages.length > 0
+                          ? cloudinaryImages[index % cloudinaryImages.length]
+                          : trend.img
+                      }
+                      alt="Imagem de lançamento"
+                    />
+                  </figure>
                 </li>
               ))}
               {trends.map((trend, index) => (
@@ -468,7 +464,7 @@ export default function Home() {
                       <Image
                         width={500}
                         height={500}
-                        className="h-150 rounded-md object-cover object-top"
+                        className="h-screen max-h-130 rounded-md object-cover object-top"
                         loading="lazy"
                         src={
                           cloudinaryImages.length > 0
@@ -487,7 +483,7 @@ export default function Home() {
                     <Image
                       width={500}
                       height={500}
-                      className="h-150 rounded-md object-cover object-top"
+                      className="h-screen max-h-130 rounded-md object-cover object-top"
                       loading="lazy"
                       src={
                         cloudinaryImages.length > 0
@@ -505,7 +501,7 @@ export default function Home() {
                     <Image
                       width={500}
                       height={500}
-                      className="h-150 rounded-md object-cover object-top"
+                      className="h-screen max-h-130 rounded-md object-cover object-top"
                       loading="lazy"
                       src={
                         cloudinaryImages.length > 0
@@ -522,7 +518,7 @@ export default function Home() {
         </section>
         <section>
           <article
-            className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-2 py-20 min-[400px]:px-4 lg:px-2 xl:px-0"
+            className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-2 py-24 min-[400px]:px-4 lg:px-2 xl:px-0"
             id="partners"
           >
             <div className="mx-auto max-w-sm space-y-3 text-center md:max-w-lg">
@@ -564,7 +560,7 @@ export default function Home() {
         </section>
         <section>
           <article
-            className="mx-auto flex w-full max-w-5xl flex-wrap gap-10 px-2 py-20 min-[400px]:px-4 lg:px-2 xl:px-0"
+            className="mx-auto flex w-full max-w-5xl flex-wrap gap-10 px-2 py-24 min-[400px]:px-4 lg:px-2 xl:px-0"
             id="aboutMe"
           >
             <Image
