@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
-  FaArrowRight,
-  FaArrowLeft,
+  // FaArrowRight,
+  // FaArrowLeft,
   FaInstagram,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -190,7 +190,6 @@ export default function Home() {
                   <Link
                     className="after:bg-secondary text-secondary relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
                     href={link.href}
-                    onClick={() => openMenu()}
                     aria-label={`Navegar até a sessão ${link.href.substring(1)}`}
                   >
                     {link.text}
