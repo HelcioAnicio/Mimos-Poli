@@ -82,11 +82,17 @@ export default function Home() {
   ];
 
   const logos = [
-    { img: "/tupperware.png" },
-    { img: "/eudora.png" },
-    { img: "/boticário.png" },
-    { img: "/jequiti.png" },
-    { img: "/natura.png" },
+    { img: "/tupperware.png", name: "Tupperware" },
+    { img: "/eudora.png", name: "Eudora" },
+    { img: "/boticario.png", name: "O Boticário" },
+    { img: "/jequiti.png", name: "Jequiti" },
+    { img: "/natura.png", name: "Natura" },
+    { img: "/avon.png", name: "Avon" },
+    { img: "/barome.webp", name: "Barume" },
+    { img: "/lacquadifiori.png", name: "L'acqua di Fiore" },
+    { img: "/racco.png", name: "Racco" },
+    { img: "/ciclo.webp", name: "Ciclo" },
+    { img: "/rommanel.png", name: "Rommanel" },
   ];
 
   const companies = [
@@ -279,12 +285,10 @@ export default function Home() {
                 </ul>
               </nav>
               <Link
+                href={"#partners"}
                 aria-label="Navegar a sessão de revista dos fornecedores"
-                href={
-                  "https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20sua%20loja"
-                }
               >
-                <Button>Explorar Coleções</Button>
+                <Button onClick={() => openMenu()}>Explorar Coleções</Button>
               </Link>
             </menu>
           </div>
@@ -391,7 +395,11 @@ export default function Home() {
                       <h3 className="text-background font-notoSerif text-4xl">
                         {brand.name}
                       </h3>
-                      <Button>Explorar</Button>
+                      <Link
+                        href={`https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20${brand.name}`}
+                      >
+                        <Button>Explorar</Button>
+                      </Link>
                     </div>
                   </li>
                 );
@@ -558,7 +566,7 @@ export default function Home() {
             id="aboutMe"
           >
             <Image
-              src={"/1.webp"}
+              src={"/poliana.png"}
               alt={"Imagem da Poliana"}
               height={500}
               width={500}
@@ -602,7 +610,7 @@ export default function Home() {
                   height={500}
                   className="w-40 object-contain"
                   src={logo.img}
-                  alt="Imagem de lançamento"
+                  alt={`Logo da companhia ${logo.name}`}
                   key={index}
                 />
               ))}
@@ -612,7 +620,7 @@ export default function Home() {
                   height={500}
                   className="w-40 object-contain"
                   src={logo.img}
-                  alt="Imagem de lançamento"
+                  alt={`Logo da companhia ${logo.name}`}
                   key={index}
                   aria-hidden
                 />
@@ -623,7 +631,7 @@ export default function Home() {
                   height={500}
                   className="hidden w-40 object-contain 2xl:inline"
                   src={logo.img}
-                  alt="Imagem de lançamento"
+                  alt={`Logo da companhia ${logo.name}`}
                   key={index}
                   aria-hidden
                 />
@@ -634,7 +642,7 @@ export default function Home() {
                   height={500}
                   className="hidden w-40 object-contain 2xl:inline"
                   src={logo.img}
-                  alt="Imagem de lançamento"
+                  alt={`Logo da companhia ${logo.name}`}
                   key={index}
                   aria-hidden
                 />
