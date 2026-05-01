@@ -26,13 +26,9 @@ function getCloudinaryAuthHeader() {
 }
 
 export async function searchCloudinaryImagesByTag(tag: string) {
-  if (!tag.trim()) {
-    return [];
-  }
+  if (!tag.trim()) return [];
 
   const endpoint = `https://api.cloudinary.com/v1_1/${cloudName}/resources/search`;
-  const expression = `tags:${tag}`;
-
   const response = await fetch(endpoint, {
     method: "POST",
     headers: {
@@ -40,23 +36,29 @@ export async function searchCloudinaryImagesByTag(tag: string) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      expression,
+      expression: `tags:${tag}`,
       sort_by: [{ created_at: "desc" }],
-      max_results: 10,
+      max_results: 20,
     }),
-    cache: "no-store",
+    // Mudamos para revalidate para ganhar velocidade com cache de 1 hora
+    next: { revalidate: 3600 },
   });
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(
-      `Cloudinary API request failed (${response.status}): ${errorText}`,
-    );
-  }
+  if (!response.ok) return [];
 
   const data = (await response.json()) as CloudinarySearchResponse;
-  return (data.resources ?? [])
-    .filter((resource) => resource.resource_type === "image")
-    .map((resource) => resource.secure_url)
-    .filter((url) => url.includes("/image/upload/"));
+  return (
+    (data.resources ?? [])
+      // Garante que o Cloudinary identificou como imagem[cite: 4]
+      .filter((resource) => resource.resource_type === "image")
+      .map((resource: { secure_url: string }) => {
+        // Otimização de URL que sugerimos antes
+        return resource.secure_url.replace(
+          "/upload/",
+          "/upload/f_auto,q_auto,w_1000/",
+        );
+      })
+      // Filtro extra: garante que a URL não aponte para pastas de vídeo
+      .filter((url: string | string[]) => !url.includes("/video/upload/"))
+  );
 }
