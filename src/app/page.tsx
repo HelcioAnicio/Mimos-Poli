@@ -224,7 +224,7 @@ export default async function Home() {
           </article>
         </section>
         <Suspense
-          fallback={<div className="h-[500px] animate-pulse bg-gray-200" />}
+          fallback={<div className="h-125 animate-pulse bg-gray-200" />}
         >
           <TrendsCarousel />
         </Suspense>
