@@ -15,6 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { searchCloudinaryImagesByTag } from "@/lib/cloudinary";
 import { Button } from "@/components/ui/button";
+import { Header } from "@/components/ui/header";
 // Importe seu novo componente de menu mobile aqui
 // import { MobileMenu } from "@/components/MobileMenu";
 
@@ -132,6 +133,7 @@ export default async function Home() {
   ];
   return (
     <>
+      <Header />
       <main className="w-full">
         <section
           className="relative mx-auto h-screen w-full overflow-y-hidden"
