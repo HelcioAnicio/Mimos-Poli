@@ -18,6 +18,7 @@ import { Header } from "@/components/ui/header";
 import { Suspense } from "react";
 import { TrendsCarousel } from "@/components/ui/trendsCarousel";
 import { SectionHero } from "@/components/ui/sectionHero";
+import { Segments } from "@/components/ui/segments";
 
 export default async function Home() {
   const logos = [
@@ -113,72 +114,7 @@ export default async function Home() {
       <Header />
       <main className="w-full">
         <SectionHero />
-        <section>
-          <article
-            className="mx-auto w-full max-w-5xl px-5 py-24 lg:px-2 xl:px-0"
-            id="segments"
-          >
-            <div className="flex flex-col gap-4 pb-20 xl:pb-32">
-              <h2 className="font-notoSerif w-full max-w-40 text-5xl min-[430px]:max-w-96 min-[500px]:max-w-none">
-                Nossas marcas parceiras
-              </h2>
-              <div className="flex flex-wrap justify-between gap-5">
-                <p className="text-foreground/70 w-11/12 font-light sm:w-1/2">
-                  Uma seleção exclusiva de parceiros que compartilham nosso
-                  compromisso com a qualidade, ética e beleza atemporal.
-                </p>
-                <Link
-                  href="#partners"
-                  className="text-sm font-light text-yellow-600 uppercase underline underline-offset-2"
-                >
-                  Ver todos os parceiros
-                </Link>
-              </div>
-            </div>
-            <ul className="grid auto-rows-[400px] grid-cols-1 gap-8 md:grid-cols-12">
-              {[
-                { name: "Natura", src: "/natura.webp" },
-                { name: "Eudora", src: "/eudora.webp" },
-                { name: "O Boticário", src: "/boticario.webp" },
-                { name: "Rommanel", src: "/rommanel.webp" },
-              ].map((brand, index) => {
-                const isLarge = index === 0 || index === 3;
-                const gridClasses = isLarge ? "md:col-span-7" : "md:col-span-5";
-
-                return (
-                  <li
-                    key={index}
-                    className={`group relative flex w-full overflow-hidden rounded-xl ${gridClasses}`}
-                  >
-                    <Image
-                      src={brand.src}
-                      alt={`logo do ${brand.name}`}
-                      fill
-                      sizes="500"
-                      className="absolute inset-0 z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 z-20 bg-linear-to-t from-black/80 to-transparent"
-                    />
-
-                    <div className="relative z-30 flex h-full flex-col justify-end gap-3 px-10 pb-5">
-                      <h3 className="text-background font-notoSerif text-4xl">
-                        {brand.name}
-                      </h3>
-                      <Link
-                        href={`https://wa.me/5531992893691?text=Oi,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20revista%20${brand.name}`}
-                      >
-                        <Button>Explorar</Button>
-                      </Link>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </article>
-        </section>
+        <Segments />
         <Suspense
           fallback={<div className="h-125 animate-pulse bg-gray-200" />}
         >

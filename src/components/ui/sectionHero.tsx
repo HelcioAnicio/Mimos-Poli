@@ -12,7 +12,7 @@ export const SectionHero = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setHeroVisible(entry.isIntersecting);
-        console.log("First console: ", heroVisible);
+        console.log("First hero: ", heroVisible);
       },
       { threshold: 0.1 },
     );
@@ -29,7 +29,7 @@ export const SectionHero = () => {
 
   return (
     <section
-      className="relative mx-auto h-screen w-full overflow-y-hidden"
+      className="relative mx-auto h-screen w-full overflow-hidden"
       ref={heroRef}
       id="hero"
     >
