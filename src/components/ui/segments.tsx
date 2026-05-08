@@ -125,9 +125,9 @@ export const Segments = () => {
                   onClick={() => setCardWhenClicked(card.index)}
                   onMouseLeave={() => setCardWhenHoverOut(card.index)}
                   onMouseEnter={() => setCardWhenHoverIn(card.index)}
-                  className={`relative h-full w-full rounded-xl shadow-lg transition-all duration-700 transform-3d ${card.state ? "transform-[rotateY(180deg)]" : "transform-[rotateY(0)]"}`}
+                  className={`li_div relative h-full w-full rounded-xl shadow-lg transition-all duration-700 transform-3d ${card.state ? "transform-[rotateY(180deg)]" : "transform-[rotateY(0)]"}`}
                 >
-                  <div className="bg-foreground/90 absolute inset-0 flex h-full w-full flex-col justify-end overflow-hidden rounded-xl backface-hidden">
+                  <div className="bg-foreground/90 li_div_div absolute inset-0 flex h-full w-full flex-col justify-end overflow-hidden rounded-xl backface-hidden">
                     <Image
                       src={card.src}
                       alt={`logo do ${card.name}`}
