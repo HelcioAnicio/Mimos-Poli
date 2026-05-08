@@ -112,11 +112,13 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main className="w-full">
+      <main className="w-screen overflow-x-hidden">
         <SectionHero />
         <Segments />
         <Suspense
-          fallback={<div className="h-125 animate-pulse bg-gray-200" />}
+          fallback={
+            <div className="relative z-30 h-125 animate-pulse bg-gray-200" />
+          }
         >
           <TrendsCarousel />
         </Suspense>

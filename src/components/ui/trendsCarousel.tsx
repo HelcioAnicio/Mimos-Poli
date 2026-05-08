@@ -27,7 +27,7 @@ export const TrendsCarousel = async () => {
   ];
 
   return (
-    <section className="bg-card">
+    <section className="bg-card relative z-30">
       <article
         className="mx-auto flex w-full flex-col gap-20 overflow-x-hidden px-4 py-24 md:py-20 lg:px-2 xl:px-0"
         id="trends"

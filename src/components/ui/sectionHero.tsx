@@ -12,7 +12,6 @@ export const SectionHero = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setHeroVisible(entry.isIntersecting);
-        console.log("First hero: ", heroVisible);
       },
       { threshold: 0.1 },
     );
@@ -34,17 +33,18 @@ export const SectionHero = () => {
       id="hero"
     >
       <Image
-        className={`${heroVisible ? "scale-100 opacity-100" : "scale-110 opacity-0"} absolute right-0 -z-20 min-h-dvh w-full object-cover transition-all delay-150 duration-1000 placeholder:blur-lg`}
+        className={`${heroVisible ? "scale-100 opacity-100" : "scale-110 opacity-0"} absolute top-0 left-0 -z-20 h-full w-full object-cover transition-all delay-150 duration-1000 placeholder:blur-lg`}
         src={"/backgroundImage.webp"}
         fill
         alt="background"
         priority
         fetchPriority="high"
+        loading="eager"
         quality={75}
       />
       <div
         aria-hidden
-        className={`${heroVisible ? "bg-foreground/60 opacity-100" : "bg-foreground/30 opacity-0"} absolute -z-10 min-h-full w-full transition-all delay-500 duration-1000`}
+        className={`${heroVisible ? "bg-foreground/60 opacity-100" : "bg-foreground/30 opacity-0"} absolute -z-10 h-full w-full transition-all delay-500 duration-1000`}
       />
       <article className="min-[]: mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-2 px-5 min-[430px]:gap-16 min-[1100px]:gap-20 sm:gap-20 lg:gap-5 lg:px-2 xl:px-0">
         <div className="flex flex-col gap-5">
