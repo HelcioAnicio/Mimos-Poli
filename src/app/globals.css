@@ -156,4 +156,14 @@
     @apply font-inter;
     font-display: swap;
   }
+
+  .li_div {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .li_div_div {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
 }

@@ -10,26 +10,29 @@ import { useState } from "react";
 
 export const Header = () => {
   const [menu, setMenu] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
+  // const menuRef = useRef(null);
 
   const openMenu = () => {
     setMenu(!menu);
+    setMenuVisible(!menu);
   };
 
   return (
     <header className="bg-card fixed top-0 left-0 z-50 w-full">
-      <div className="relative m-auto flex max-w-5xl items-center justify-between px-5 py-5">
+      <div className="relative mx-auto flex w-full max-w-5xl items-center justify-between px-5 py-5">
         <h2 className="text-primary font-sans text-2xl font-bold">
           Mimos da Poli
-        </h2>
+        </h2>{" "}
         <nav>
           <ul className="flex items-center lg:gap-5">
             {[
-              { text: "Home", href: "#hero" },
+              { text: "Home", href: "#home" },
               { text: "Segmentos", href: "#segments" },
               { text: "Lançamentos", href: "#trends" },
               { text: "Parceiros", href: "#partners" },
               { text: "Sobre mim", href: "#aboutMe" },
-              { text: "Contact", href: "#footer" },
+              { text: "Contato", href: "#footer" },
             ].map((link, index) => (
               <li key={index} className="hidden list-none lg:inline">
                 <Link
@@ -76,8 +79,16 @@ export const Header = () => {
         </nav>
       </div>
       {menu && (
-        <div className="bg-foreground/85 absolute top-0 right-0 z-30 min-h-screen w-screen touch-none overflow-hidden transition-all duration-300">
-          <menu className="bg-card absolute top-0 right-0 z-40 flex min-h-max w-full max-w-md flex-col gap-5 p-5 min-[450px]:rounded-bl-xl lg:hidden">
+        <>
+          <div
+            aria-hidden
+            onClick={() => openMenu()}
+            className={`${menuVisible ? "translate-x-0 opacity-100 backdrop-blur-xs" : "translate-x-full opacity-0 backdrop-blur-lg"} bg-foreground/85 absolute top-0 right-0 z-30 min-h-screen w-screen touch-none overflow-hidden overscroll-contain transition-all delay-1000 duration-300 lg:hidden`}
+          ></div>
+          <menu
+            // ref={menuRef}
+            className={`${menuVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"} bg-card absolute top-0 right-0 z-50 flex min-h-max w-full max-w-md flex-col gap-5 p-5 min-[450px]:rounded-bl-xl lg:hidden`}
+          >
             <div className="ml-auto">
               <button
                 className="cursor-pointer"
@@ -90,12 +101,12 @@ export const Header = () => {
             <nav>
               <ul className="text-primary flex flex-col gap-5 sm:gap-10">
                 {[
-                  { text: "Home", href: "#hero" },
+                  { text: "Home", href: "#home" },
                   { text: "Segmentos", href: "#segments" },
                   { text: "Lançamentos", href: "#trends" },
                   { text: "Parceiros", href: "#partners" },
                   { text: "Sobre mim", href: "#aboutMe" },
-                  { text: "Contact", href: "#footer" },
+                  { text: "Contato", href: "#footer" },
                 ].map((link, index) => (
                   <li key={index} className="list-none">
                     <Link
@@ -139,7 +150,7 @@ export const Header = () => {
               <Button onClick={() => openMenu()}>Explorar Coleções</Button>
             </Link>
           </menu>
-        </div>
+        </>
       )}
     </header>
   );
