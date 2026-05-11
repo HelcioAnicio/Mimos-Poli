@@ -92,20 +92,20 @@ export const Segments = () => {
       >
         <div className="flex flex-col gap-4 pb-20 xl:pb-32">
           <h2
-            className={` ${segmentsState ? "blur-0 translate-x-0 opacity-100" : "-translate-x-full opacity-0 blur-md"} font-notoSerif w-full max-w-40 text-5xl transition-all delay-150 duration-700 min-[430px]:max-w-96 min-[500px]:max-w-none`}
+            className={` ${segmentsState ? "blur-0 translate-x-0 opacity-100" : "-translate-x-full opacity-0 blur-md"} font-notoSerif w-full max-w-40 text-5xl transition-all delay-150 duration-500 min-[430px]:max-w-96 min-[500px]:max-w-none`}
           >
             Nossas marcas parceiras
           </h2>
           <div className="flex flex-wrap justify-between gap-5">
             <p
-              className={` ${segmentsState ? "blur-0 translate-x-1 opacity-100" : "-translate-x-full opacity-0 blur-md"} text-foreground/70 w-11/12 font-light transition-all delay-150 duration-700 sm:w-1/2`}
+              className={` ${segmentsState ? "blur-0 translate-x-1 opacity-100" : "-translate-x-full opacity-0 blur-md"} text-foreground/70 w-11/12 font-light transition-all delay-150 duration-500 sm:w-1/2`}
             >
               Uma seleção exclusiva de parceiros que compartilham nosso
               compromisso com a qualidade, ética e beleza atemporal.
             </p>
             <Link
               href="#partners"
-              className={`${segmentsState ? "blur-0 translate-x-0 opacity-100" : "translate-x-full opacity-0 blur-md"} text-sm font-light text-yellow-600 uppercase underline underline-offset-2 transition-all delay-150 duration-700 hover:scale-110 hover:animate-pulse`}
+              className={`${segmentsState ? "blur-0 translate-x-0 opacity-100" : "translate-x-full opacity-0 blur-md"} text-sm font-light text-yellow-600 uppercase underline underline-offset-2 transition-all delay-150 duration-500 hover:scale-110 hover:animate-pulse`}
             >
               Ver todos os parceiros
             </Link>
@@ -119,13 +119,13 @@ export const Segments = () => {
             return (
               <li
                 key={card.index}
-                className={`${segmentsState ? "blur-0 translate-y-0 opacity-100" : "translate-y-full opacity-0 blur-md"} group h-full w-full rounded-xl transition-all delay-500 duration-700 perspective-midrange ${gridClasses}`}
+                className={`${segmentsState ? "blur-0 translate-y-0 opacity-100" : "translate-y-full opacity-0 blur-md"} group h-full w-full rounded-xl transition-all delay-500 duration-500 perspective-midrange ${gridClasses}`}
               >
                 <div
                   onClick={() => setCardWhenClicked(card.index)}
                   onMouseLeave={() => setCardWhenHoverOut(card.index)}
                   onMouseEnter={() => setCardWhenHoverIn(card.index)}
-                  className={`li_div relative h-full w-full rounded-xl shadow-lg transition-all duration-700 transform-3d ${card.state ? "transform-[rotateY(180deg)]" : "transform-[rotateY(0)]"}`}
+                  className={`li_div relative h-full w-full rounded-xl shadow-lg transition-all duration-500 transform-3d ${card.state ? "transform-[rotateY(180deg)]" : "transform-[rotateY(0)]"}`}
                 >
                   <div className="bg-foreground/90 li_div_div absolute inset-0 flex h-full w-full flex-col justify-end overflow-hidden rounded-xl backface-hidden">
                     <Image
