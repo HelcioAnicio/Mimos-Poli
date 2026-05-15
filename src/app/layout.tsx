@@ -6,19 +6,19 @@ import { cn } from "@/lib/utils";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
+  preload: true,
 });
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
   subsets: ["latin"],
-  display: "swap",
+  preload: true,
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plusJakartaSans",
   subsets: ["latin"],
-  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
