@@ -222,7 +222,6 @@
   }
   html {
     @apply font-inter;
-    font-display: swap;
   }
 
   .li_div {

@@ -7,18 +7,21 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   preload: true,
+  display: "swap",
 });
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
   subsets: ["latin"],
   preload: true,
+  display: "swap",
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plusJakartaSans",
   subsets: ["latin"],
   preload: true,
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={cn(
         "h-full",
         "antialiased",
@@ -51,14 +54,6 @@ export default function RootLayout({
         inter.variable,
       )}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body
         className="bg-background font-inter flex w-full flex-col overflow-x-hidden"
         suppressHydrationWarning={true}
