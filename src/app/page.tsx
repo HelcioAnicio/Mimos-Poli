@@ -210,8 +210,9 @@ export default async function Home() {
             <div className="animate-scroll-custom pause-hover flex w-max gap-20 pl-20 whitespace-nowrap">
               {logos.map((logo, index) => (
                 <Image
-                  width={500}
-                  height={500}
+                  width={200}
+                  height={200}
+                  loading="lazy"
                   className="w-40 object-contain"
                   src={logo.img}
                   alt={`Logo da companhia ${logo.name}`}
@@ -220,8 +221,9 @@ export default async function Home() {
               ))}
               {logos.map((logo, index) => (
                 <Image
-                  width={500}
-                  height={500}
+                  width={200}
+                  height={200}
+                  loading="lazy"
                   className="w-40 object-contain"
                   src={logo.img}
                   alt={`Logo da companhia ${logo.name}`}
@@ -229,7 +231,7 @@ export default async function Home() {
                   aria-hidden
                 />
               ))}
-              {logos.map((logo, index) => (
+              {/* {logos.map((logo, index) => (
                 <Image
                   width={500}
                   height={500}
@@ -250,7 +252,7 @@ export default async function Home() {
                   key={index}
                   aria-hidden
                 />
-              ))}
+              ))} */}
             </div>
           </article>
         </section>

@@ -35,10 +35,13 @@ export const SectionHero = () => {
       <Image
         className={`${heroVisible ? "scale-100 opacity-100" : "scale-110 opacity-0"} absolute top-0 left-0 -z-20 h-full w-full object-cover transition-all delay-150 duration-1000 placeholder:blur-lg`}
         src={"/backgroundImage.webp"}
+        // width={300}
+        // height={700}
         fill
         alt="background"
-        priority
-        fetchPriority="high"
+        preload
+        // priority
+        // fetchPriority="high"
         loading="eager"
         quality={75}
       />
