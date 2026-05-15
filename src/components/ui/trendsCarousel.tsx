@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const TrendsCarousel = async () => {
-  const cloudinaryImages = await searchCloudinaryImagesByTag("novidades");
+  const tag = "tags:novidades OR tags:Novidades";
+  const cloudinaryImages = await searchCloudinaryImagesByTag(tag);
 
   const trends = [
     {
@@ -93,7 +94,7 @@ export const TrendsCarousel = async () => {
               </Link>
             </li>
           ))}{" "}
-          {trends.map((trend, index) => (
+          {/* {trends.map((trend, index) => (
             <li key={index} aria-hidden className="hidden 2xl:inline">
               <figure className="max-w-xs md:max-w-md">
                 <Image
@@ -128,7 +129,7 @@ export const TrendsCarousel = async () => {
                 />
               </figure>
             </li>
-          ))}
+          ))} */}
         </ul>
       </article>
     </section>

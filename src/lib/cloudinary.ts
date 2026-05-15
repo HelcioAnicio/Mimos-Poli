@@ -36,7 +36,7 @@ export async function searchCloudinaryImagesByTag(tag: string) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      expression: `tags:${tag}`,
+      expression: tag,
       sort_by: [{ created_at: "desc" }],
       max_results: 20,
     }),
