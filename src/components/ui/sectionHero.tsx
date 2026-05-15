@@ -5,8 +5,13 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
 export const SectionHero = () => {
-  const [heroVisible, setHeroVisible] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(true);
   const heroRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setHeroVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,17 +38,15 @@ export const SectionHero = () => {
       id="hero"
     >
       <Image
-        className={`${heroVisible ? "scale-100 opacity-100" : "scale-110 opacity-0"} absolute top-0 left-0 -z-20 h-full w-full object-cover transition-all delay-150 duration-1000 placeholder:blur-lg`}
+        className={`${
+          heroVisible ? "scale-100 opacity-100" : "scale-110 opacity-0"
+        } absolute top-0 left-0 -z-20 h-full w-full object-cover transition-all delay-150 duration-1000`}
         src={"/backgroundImage.webp"}
-        // width={300}
-        // height={700}
         fill
         alt="background"
-        preload
-        // priority
-        // fetchPriority="high"
-        loading="eager"
+        priority
         quality={75}
+        sizes="100vw"
       />
       <div
         aria-hidden
