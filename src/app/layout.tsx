@@ -15,6 +15,7 @@ const notoSerif = Noto_Serif({
   subsets: ["latin"],
   preload: true,
   display: "swap",
+  weight: ["400", "500"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
