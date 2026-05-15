@@ -51,6 +51,14 @@ export default function RootLayout({
         inter.variable,
       )}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className="bg-background font-inter flex w-full flex-col overflow-x-hidden"
         suppressHydrationWarning={true}
