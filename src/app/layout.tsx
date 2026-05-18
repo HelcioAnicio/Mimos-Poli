@@ -6,9 +6,8 @@ import { cn } from "@/lib/utils";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  preload: false,
+  preload: true,
   display: "swap",
-  weight: ["300", "500"],
 });
 
 const notoSerif = Noto_Serif({
@@ -22,9 +21,8 @@ const notoSerif = Noto_Serif({
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plusJakartaSans",
   subsets: ["latin"],
-  preload: false,
+  preload: true,
   display: "swap",
-  weight: ["200", "700"],
 });
 
 export const metadata: Metadata = {
