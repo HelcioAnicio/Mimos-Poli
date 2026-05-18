@@ -21,7 +21,7 @@ export const Header = () => {
   return (
     <header className="bg-card fixed top-0 left-0 z-50 w-full">
       <div className="relative mx-auto flex w-full max-w-5xl items-center justify-between px-5 py-5">
-        <h2 className="text-primary font-sans text-2xl font-bold">
+        <h2 className="text-primary font-plusJakartaSans text-2xl font-bold">
           Mimos da Poli
         </h2>{" "}
         <nav>

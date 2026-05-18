@@ -8,6 +8,7 @@ const inter = Inter({
   variable: "--font-inter",
   preload: true,
   display: "swap",
+  weight: ["300", "500"],
 });
 
 const notoSerif = Noto_Serif({
@@ -23,6 +24,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   preload: true,
   display: "swap",
+  weight: ["200", "700"],
 });
 
 export const metadata: Metadata = {
@@ -56,7 +58,7 @@ export default function RootLayout({
       )}
     >
       <body
-        className="bg-background font-inter flex w-full flex-col overflow-x-hidden"
+        className="bg-background flex w-full flex-col overflow-x-hidden"
         suppressHydrationWarning={true}
       >
         {children}

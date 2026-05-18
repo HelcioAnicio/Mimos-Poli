@@ -21,7 +21,7 @@ export const Segments = () => {
       ([entry]) => {
         setSegmentsState(entry.isIntersecting);
       },
-      { threshold: 0.1 },
+      { threshold: 0.05 },
     );
     const element = segmentsRef.current;
 
