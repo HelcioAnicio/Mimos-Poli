@@ -1,7 +1,9 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Suspense } from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -60,6 +62,9 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         {children}
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   );
