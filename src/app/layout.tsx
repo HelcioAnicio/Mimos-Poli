@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     default: "Mimos da Poli | Presentes e Lembranças Personalizadas",
     template: "%s | Mimos da Poli",
   },
+  applicationName: "Mimos da Poli",
   description:
     "Descubra os melhores mimos, presentes artesanais e lembranças personalizadas na Mimos da Poli. Produtos feitos com amor para encantar quem você ama.",
   keywords: [
@@ -159,6 +160,10 @@ export default function RootLayout({
         inter.variable,
       )}
     >
+      <meta
+        name="google-site-verification"
+        content="UHzbsXm7nr5vmO7LpTqax8KzunnbNGeicZD5GGOe_H0"
+      />
       <body
         className="bg-background flex w-full flex-col overflow-x-hidden"
         suppressHydrationWarning={true}
