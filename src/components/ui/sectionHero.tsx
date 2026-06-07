@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -25,7 +24,9 @@ export const SectionHero = () => {
         priority
         fetchPriority="high"
         quality={75}
+        sizes="(max-width: 768px) 100vw, 100vw"
       />
+
       <div
         aria-hidden
         className={`${contentVisible ? "bg-foreground/60 opacity-100" : "bg-foreground/30 opacity-0"} absolute -z-10 h-full w-full transition-all delay-200 duration-700`}
