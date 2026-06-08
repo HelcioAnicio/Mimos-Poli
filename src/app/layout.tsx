@@ -9,14 +9,14 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   preload: true,
-  display: "swap",
+  display: "optional",
 });
 
 const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
   subsets: ["latin"],
   preload: true,
-  display: "swap",
+  display: "optional",
   weight: ["400", "500"],
 });
 
@@ -24,7 +24,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plusJakartaSans",
   subsets: ["latin"],
   preload: true,
-  display: "swap",
+  display: "optional",
 });
 
 export const metadata: Metadata = {
