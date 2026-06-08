@@ -46,6 +46,11 @@
     animation-delay: 0.25s;
   }
 
+  /* h1 LCP: fill-mode none — pinta imediato, blur entra logo depois sem invalidar LCP */
+  .animate-hero-blur-in {
+    animation: heroBlurIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s none;
+  }
+
   .animate-hero-slide-up {
     animation: heroSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
   }
@@ -53,7 +58,7 @@
 
 @keyframes heroSlideLeft {
   from {
-    transform: translateX(-30px);
+    transform: translateX(-100%);
   }
   to {
     transform: translateX(0);
@@ -62,7 +67,7 @@
 
 @keyframes heroSlideUp {
   from {
-    transform: translateY(20px);
+    transform: translateY(200px);
   }
   to {
     transform: translateY(0);
@@ -79,6 +84,17 @@
   }
 }
 
+@keyframes heroBlurIn {
+  from {
+    filter: blur(12px);
+    opacity: 0.5;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
 @keyframes heroFadeIn {
   from {
     opacity: 0;
@@ -91,6 +107,7 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-slide-left,
   .animate-hero-slide-up,
+  .animate-hero-blur-in,
   .animate-hero-image,
   .animate-hero-overlay {
     animation: none;
