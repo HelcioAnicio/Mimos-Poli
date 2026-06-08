@@ -19,7 +19,7 @@ export const SectionHero = () => {
       />
       <div
         aria-hidden
-        className="animate-hero-overlay absolute -z-10 h-full w-full bg-foreground/60"
+        className="animate-hero-overlay absolute -z-10 h-full w-full bg-foreground/60 opacity-0"
       />
       <article className="mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-2 px-5 min-[430px]:gap-16 min-[1100px]:gap-20 sm:gap-20 lg:gap-5 lg:px-2 xl:px-0">
         <div className="flex flex-col gap-5">
