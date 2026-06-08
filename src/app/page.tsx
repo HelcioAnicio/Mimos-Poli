@@ -174,6 +174,8 @@ export default async function Home() {
               alt={"Imagem da Poliana"}
               height={500}
               width={500}
+              loading="lazy"
+              sizes="(max-width: 1024px) 100vw, 384px"
               className="w-full rounded-md object-cover lg:w-1/2 lg:max-w-sm"
             />
             <div className="max-w-xl space-y-10 py-10 lg:w-1/2">
