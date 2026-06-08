@@ -16,7 +16,7 @@ const notoSerif = Noto_Serif({
   variable: "--font-noto-serif",
   subsets: ["latin"],
   preload: true,
-  display: "optional",
+  display: "swap",
   weight: ["400", "500"],
 });
 
@@ -24,7 +24,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plusJakartaSans",
   subsets: ["latin"],
   preload: true,
-  display: "optional",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
